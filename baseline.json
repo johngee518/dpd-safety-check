@@ -133,7 +133,7 @@
   "www.wvhdf.com",
   "www.wyomingcda.com"
  ],
- "generated": "2026-10-17T12:24:27Z",
+ "generated": "2026-10-17T15:09:00Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -201,7 +201,7 @@
    "skeleton_hash": "85702596be8b4175"
   },
   "/tracker/": {
-   "inline_scripts": 1,
+   "inline_scripts": 0,
    "skeleton": "down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
    "skeleton_hash": "71437205a7d5b41d"
   }
