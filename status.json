@@ -1,0 +1,126 @@
+{
+ "site": "https://downpaymentdesk.pages.dev",
+ "mode": "full",
+ "checked_at": "2026-10-17T12:23:27Z",
+ "status": "WARN",
+ "fail_count": 0,
+ "warn_count": 13,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39032262042",
+ "results": [
+  {
+   "check": "tls",
+   "status": "PASS",
+   "detail": "valid, expires 2027-01-13 (88 days)"
+  },
+  {
+   "check": "http->https",
+   "status": "PASS",
+   "detail": "301 to HTTPS"
+  },
+  {
+   "check": "site up",
+   "status": "PASS",
+   "detail": "HTTP 200, 8794 bytes"
+  },
+  {
+   "check": "headers /",
+   "status": "PASS",
+   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+  },
+  {
+   "check": "sitemap",
+   "status": "PASS",
+   "detail": "177 pages listed"
+  },
+  {
+   "check": "headers /rates/",
+   "status": "PASS",
+   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+  },
+  {
+   "check": "headers /sponsor/",
+   "status": "PASS",
+   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+  },
+  {
+   "check": "pages",
+   "status": "PASS",
+   "detail": "179 pages checked: 179 clean, 0 with problems"
+  },
+  {
+   "check": "safe browsing (API)",
+   "status": "WARN",
+   "detail": "SAFE_BROWSING_KEY secret not set; official API skipped (keyless lookup below still runs)"
+  },
+  {
+   "check": "safe browsing (transparency report)",
+   "status": "PASS",
+   "detail": "no data yet (normal for a new site)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://hcr.ny.gov HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://housing.az.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC\u00a7ionNum=11911 unreachable (UnicodeEncodeError: 'ascii' codec can't encode character '\\xa7' in position 49: ordinal not in range(128))"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.maine.gov/revenue/taxes/property-tax/transfer-tax HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
+  },
+  {
+   "check": "outbound links",
+   "status": "PASS",
+   "detail": "147 unique: 135 ok, 12 warn, 0 fail"
+  }
+ ]
+}
