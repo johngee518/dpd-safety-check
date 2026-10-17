@@ -105,8 +105,12 @@ def norm(s):
     return re.sub(r"\s+", " ", s).strip().lower()
 
 
+BARE_AMP = re.compile(r"&(?![a-zA-Z][a-zA-Z0-9]*;|#[0-9]+;|#[xX][0-9a-fA-F]+;)")
+
+
 def skel(html):
-    p = Skel(); p.feed(html)
+    # Browsers leave a bare "&name" in attribute values alone (e.g. "?a=1&sectionNum=2"); Python would turn it into "§ionNum".
+    p = Skel(); p.feed(BARE_AMP.sub("&amp;", html))
     sk = "|".join([norm(p.title), norm(p.h1), ",".join(p.nav)])
     return p, hashlib.sha256(sk.encode()).hexdigest()[:16], sk
 
