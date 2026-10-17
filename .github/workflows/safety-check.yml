@@ -1,0 +1,53 @@
+name: DownPayment Desk safety check
+# Hourly at :41 (quick). The 14:41 UTC run (~9:41 AM Central) is the daily full run that also checks every outbound link.
+# Public repo: GitHub Actions minutes are free and unlimited. Standard-library Python only, no dependencies.
+# Status JSON is published to the `status` branch (status.json). Any failure fails the run (GitHub emails the owner)
+# and the run summary starts with SAFETY_ALERT.
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "quick or full (full also checks outbound links)"
+        default: full
+        type: choice
+        options: [quick, full]
+permissions:
+  contents: write   # only to publish status.json on the status branch
+concurrency:
+  group: dpd-safety-check
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Run safety check
+        id: check
+        continue-on-error: true
+        env:
+          SAFE_BROWSING_KEY: ${{ secrets.SAFE_BROWSING_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then MODE="${{ inputs.mode }}";
+          elif [ "$(date -u +%H)" = "14" ]; then MODE=full; else MODE=quick; fi
+          python3 check.py "$MODE"
+      - name: Publish status.json (status branch)
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          [ -f status.json ] || exit 0
+          B64=$(base64 -w0 status.json)
+          for i in 1 2 3; do
+            SHA=$(gh api "repos/$R/contents/status.json?ref=status" --jq .sha 2>/dev/null || true)
+            gh api -X PUT "repos/$R/contents/status.json" -f message="status $(date -u +%FT%TZ)" -f branch=status \
+              -f content="$B64" ${SHA:+-f sha="$SHA"} --silent && exit 0
+            sleep $((i*3))
+          done
+          echo "::warning::could not publish status.json"
+      - name: Fail on any problem
+        if: steps.check.outcome != 'success'
+        run: |
+          echo "SAFETY_ALERT (see the run summary)"; exit 1

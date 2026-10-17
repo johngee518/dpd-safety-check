@@ -1,0 +1,230 @@
+{
+ "_note": "Expected public structure of the live site. Regenerate only after an approved deploy: python3 check.py baseline",
+ "allowed_script_hosts": [
+  "f.convertkit.com"
+ ],
+ "allowed_script_suffixes": [
+  ".kit.com"
+ ],
+ "external_domains": [
+  "adfa.arkansas.gov",
+  "api.bigdatacloud.net",
+  "api.coingecko.com",
+  "api.gold-api.com",
+  "ballotpedia.org",
+  "code.dccouncil.gov",
+  "code.wvlegislature.gov",
+  "codes.ohio.gov",
+  "commerce.mt.gov",
+  "dat.maryland.gov",
+  "dbedt.hawaii.gov",
+  "dca.georgia.gov",
+  "dhcd.maryland.gov",
+  "dlnr.hawaii.gov",
+  "dnr.alaska.gov",
+  "dor.georgia.gov",
+  "dor.sc.gov",
+  "dor.wa.gov",
+  "floridarevenue.com",
+  "fred.stlouisfed.org",
+  "gc.nh.gov",
+  "hcr.ny.gov",
+  "housing.az.gov",
+  "housing.nv.gov",
+  "iga.in.gov",
+  "kshousingcorp.org",
+  "law.justia.com",
+  "law.lis.virginia.gov",
+  "le.utah.gov",
+  "leginfo.legislature.ca.gov",
+  "legislature.idaho.gov",
+  "mca.legmt.gov",
+  "mhdc.com",
+  "ncua.gov",
+  "opportunityiowa.gov",
+  "otr.cfo.dc.gov",
+  "portal.ct.gov",
+  "revenue.delaware.gov",
+  "revenue.ky.gov",
+  "revenue.nebraska.gov",
+  "revisor.mo.gov",
+  "schousing.sc.gov",
+  "sdlegislature.gov",
+  "sf.freddiemac.com",
+  "singlefamily.fanniemae.com",
+  "tax.illinois.gov",
+  "tax.nv.gov",
+  "tax.ri.gov",
+  "tax.vermont.gov",
+  "thda.org",
+  "www.ahfa.com",
+  "www.ahfc.us",
+  "www.annualcreditreport.com",
+  "www.azleg.gov",
+  "www.calhfa.ca.gov",
+  "www.chfa.org",
+  "www.chfainfo.com",
+  "www.consumerfinance.gov",
+  "www.dchfa.org",
+  "www.delcode.delaware.gov",
+  "www.destatehousing.com",
+  "www.dfa.arkansas.gov",
+  "www.fdic.gov",
+  "www.federalreserve.gov",
+  "www.floridahousing.org",
+  "www.freddiemac.com",
+  "www.housingnm.org",
+  "www.hud.gov",
+  "www.idahohousing.com",
+  "www.ihda.org",
+  "www.in.gov",
+  "www.investor.gov",
+  "www.kslegislature.gov",
+  "www.kyhousing.org",
+  "www.lavote.gov",
+  "www.legis.iowa.gov",
+  "www.lhc.la.gov",
+  "www.maine.gov",
+  "www.mainehousing.org",
+  "www.mass.gov",
+  "www.masshousing.com",
+  "www.mhdc.com",
+  "www.michigan.gov",
+  "www.mnhousing.gov",
+  "www.mshomecorp.com",
+  "www.natronacounty-wy.gov",
+  "www.ncdor.gov",
+  "www.nchfa.com",
+  "www.ndcourts.gov",
+  "www.ndhousing.nd.gov",
+  "www.nhhousing.org",
+  "www.nifa.org",
+  "www.nj.gov",
+  "www.ohcs.oregon.gov",
+  "www.ohfa.org",
+  "www.ohiohome.org",
+  "www.ok.gov",
+  "www.oregon.gov",
+  "www.oregonlegislature.gov",
+  "www.pa.gov",
+  "www.phfa.org",
+  "www.rd.usda.gov",
+  "www.redfin.com",
+  "www.revenue.alabama.gov",
+  "www.revenue.nh.gov",
+  "www.revenue.state.mn.us",
+  "www.revenue.wi.gov",
+  "www.rihousing.com",
+  "www.sdhousing.org",
+  "www.sos.ms.gov",
+  "www.summitcountyco.gov",
+  "www.tax.ny.gov",
+  "www.tdhca.texas.gov",
+  "www.tdi.texas.gov",
+  "www.thda.org",
+  "www.tn.gov",
+  "www.treasurydirect.gov",
+  "www.utahhousingcorp.org",
+  "www.va.gov",
+  "www.vhfa.org",
+  "www.virginiahousing.com",
+  "www.wheda.com",
+  "www.wshfc.org",
+  "www.wvhdf.com",
+  "www.wyomingcda.com"
+ ],
+ "generated": "2026-10-17T12:20:16Z",
+ "key_pages": {
+  "/": {
+   "inline_scripts": 0,
+   "skeleton": "save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "2774fb92fcf665bb"
+  },
+  "/blog/": {
+   "inline_scripts": 1,
+   "skeleton": "the stash: guides to saving, home buying, mortgages, investing and debt | downpayment desk|the stash|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "e9472d833d5be4f8"
+  },
+  "/calculators/": {
+   "inline_scripts": 1,
+   "skeleton": "mortgage, affordability, closing cost & rent vs buy calculators | downpayment desk|calculators|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "8543cbc78c665693"
+  },
+  "/down-payment-calculator/": {
+   "inline_scripts": 1,
+   "skeleton": "down payment calculator with pmi, taxes & insurance | downpayment desk|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "03e2febd5b0d0b76"
+  },
+  "/first-time-buyer-programs/": {
+   "inline_scripts": 0,
+   "skeleton": "first-time homebuyer programs & down payment assistance by state | downpayment desk|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "52e6c3ff9f811f84"
+  },
+  "/homes/": {
+   "inline_scripts": 1,
+   "skeleton": "homes: local home values and mon stats | downpayment desk|homes|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "b6506390cb7ff9ea"
+  },
+  "/how-long-to-save/": {
+   "inline_scripts": 1,
+   "skeleton": "how long to save for a down payment? calculator by zip | downpayment desk|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "c031ef850062b6b0"
+  },
+  "/markets/": {
+   "inline_scripts": 1,
+   "skeleton": "mon search: crypto, energy & commodities | downpayment desk|mon|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "f080a9ec2d2a667e"
+  },
+  "/rates/": {
+   "inline_scripts": 1,
+   "skeleton": "today's mortgage rates & housing economy | downpayment desk|rates & economy|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "4c652db2a8c9534b"
+  },
+  "/sponsor-terms/": {
+   "inline_scripts": 0,
+   "skeleton": "sponsor terms | downpayment desk|sponsor terms|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "801f1b07d56f985b"
+  },
+  "/sponsor/": {
+   "inline_scripts": 0,
+   "skeleton": "sponsor downpayment desk | downpayment desk|put your brand in front of first-time home buyers.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "04055317e50ee023"
+  },
+  "/states/": {
+   "inline_scripts": 0,
+   "skeleton": "home buying costs by state: property tax, transfer tax & home values | downpayment desk|home buying costs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "dc9b69c99d50e59b"
+  },
+  "/states/texas/": {
+   "inline_scripts": 0,
+   "skeleton": "texas property tax, transfer tax & closing costs | downpayment desk|buying a home in texas|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "85702596be8b4175"
+  },
+  "/tracker/": {
+   "inline_scripts": 1,
+   "skeleton": "down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "71437205a7d5b41d"
+  }
+ },
+ "min_sitemap_pages": 143,
+ "redirect_allow": {
+  "leg.mt.gov": [
+   "mca.legmt.gov"
+  ],
+  "www.kslegislature.org": [
+   "www.kslegislature.gov"
+  ],
+  "www.njhousing.gov": [
+   "www.nj.gov"
+  ],
+  "www.ok.gov": [
+   "oklahoma.gov"
+  ],
+  "www.schousing.com": [
+   "schousing.sc.gov"
+  ],
+  "www.sdhda.org": [
+   "www.sdhousing.org"
+  ]
+ }
+}
