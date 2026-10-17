@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.pages.dev",
  "mode": "full",
- "checked_at": "2026-10-17T12:23:27Z",
+ "checked_at": "2026-10-17T12:25:29Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 13,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39032262042",
+ "warn_count": 12,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39032402507",
  "results": [
   {
    "check": "tls",
@@ -85,7 +85,7 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC\u00a7ionNum=11911 unreachable (UnicodeEncodeError: 'ascii' codec can't encode character '\\xa7' in position 49: ordinal not in range(128))"
+   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911 HTTP 403 (bot-block or server error)"
   },
   {
    "check": "link",
@@ -113,14 +113,9 @@
    "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
   },
   {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
-  },
-  {
    "check": "outbound links",
    "status": "PASS",
-   "detail": "147 unique: 135 ok, 12 warn, 0 fail"
+   "detail": "147 unique: 136 ok, 11 warn, 0 fail"
   }
  ]
 }
