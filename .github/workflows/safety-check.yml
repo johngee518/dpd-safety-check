@@ -1,11 +1,16 @@
 name: DownPayment Desk safety check
-# Hourly at :41 (quick). The 14:41 UTC run (~9:41 AM Central) is the daily full run that also checks every outbound link.
-# Public repo: GitHub Actions minutes are free and unlimited. Standard-library Python only, no dependencies.
-# Status JSON is published to the `status` branch (status.json). Any failure fails the run (GitHub emails the owner)
-# and the run summary starts with SAFETY_ALERT.
+# Target site: config.json (site_base). Public repo: Actions minutes are free and unlimited. Standard-library Python only.
+# GitHub delays or drops scheduled runs at busy times (plain hourly cron here ran only every 2-5 h), so the schedule fires
+# four times an hour and a gate skips the run if a check already finished in the last 40 minutes => about one real check per hour.
+# The full check (adds every outbound link) runs on the first scheduled run after 14:00 UTC each day, or whenever the
+# last full run is more than 26 h old, so a dropped run can't skip the daily link check.
+# Status JSON -> branch `status` (status.json, last_full.txt). Any failure fails the run and the summary starts with SAFETY_ALERT.
 on:
   schedule:
+    - cron: "11 * * * *"
+    - cron: "26 * * * *"
     - cron: "41 * * * *"
+    - cron: "56 * * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -14,7 +19,7 @@ on:
         type: choice
         options: [quick, full]
 permissions:
-  contents: write   # only to publish status.json on the status branch
+  contents: write   # only to publish status.json / last_full.txt on the status branch
 concurrency:
   group: dpd-safety-check
   cancel-in-progress: false
@@ -22,32 +27,40 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
     steps:
+      - name: Gate (skip if a check ran in the last 40 min; pick quick or full)
+        id: gate
+        run: |
+          get() { gh api "repos/$R/contents/$1?ref=status" --jq .content 2>/dev/null | base64 -d 2>/dev/null; }
+          NOW=$(date -u +%s)
+          LAST=$(get status.json | python3 -c "import sys,json,datetime as d;print(int(d.datetime.fromisoformat(json.load(sys.stdin)['checked_at'].replace('Z','+00:00')).timestamp()))" 2>/dev/null || echo 0)
+          LFULL=$(get last_full.txt | tr -dc 0-9); LFULL=${LFULL:-0}
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "run=1" >> $GITHUB_OUTPUT; echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT; exit 0; fi
+          if [ $((NOW-LAST)) -lt 2400 ]; then echo "Skip: last check $(( (NOW-LAST)/60 )) min ago"; exit 0; fi
+          MODE=quick; H=$(date -u +%H); TODAY14=$(date -u -d "$(date -u +%F) 14:00" +%s)
+          if { [ "$H" -ge 14 ] && [ "$LFULL" -lt "$TODAY14" ]; } || [ $((NOW-LFULL)) -gt 93600 ]; then MODE=full; fi
+          echo "run=1" >> $GITHUB_OUTPUT; echo "mode=$MODE" >> $GITHUB_OUTPUT; echo "Running $MODE"
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == '1'
         with: { persist-credentials: false }
       - name: Run safety check
         id: check
+        if: steps.gate.outputs.run == '1'
         continue-on-error: true
         env:
           SAFE_BROWSING_KEY: ${{ secrets.SAFE_BROWSING_KEY }}
+        run: python3 check.py "${{ steps.gate.outputs.mode }}"
+      - name: Publish status (status branch)
+        if: always() && steps.gate.outputs.run == '1'
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then MODE="${{ inputs.mode }}";
-          elif [ "$(date -u +%H)" = "14" ]; then MODE=full; else MODE=quick; fi
-          python3 check.py "$MODE"
-      - name: Publish status.json (status branch)
-        if: always()
-        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
-        run: |
-          [ -f status.json ] || exit 0
-          B64=$(base64 -w0 status.json)
-          for i in 1 2 3; do
-            SHA=$(gh api "repos/$R/contents/status.json?ref=status" --jq .sha 2>/dev/null || true)
-            gh api -X PUT "repos/$R/contents/status.json" -f message="status $(date -u +%FT%TZ)" -f branch=status \
-              -f content="$B64" ${SHA:+-f sha="$SHA"} --silent && exit 0
-            sleep $((i*3))
-          done
-          echo "::warning::could not publish status.json"
+          put() { F="$1"; N="$2"; B64=$(base64 -w0 "$F")
+            for i in 1 2 3; do SHA=$(gh api "repos/$R/contents/$N?ref=status" --jq .sha 2>/dev/null || true)
+              gh api -X PUT "repos/$R/contents/$N" -f message="status $(date -u +%FT%TZ)" -f branch=status -f content="$B64" ${SHA:+-f sha="$SHA"} --silent && return 0; sleep $((i*3)); done
+            echo "::warning::could not publish $N"; }
+          [ -f status.json ] && put status.json status.json
+          if [ "${{ steps.gate.outputs.mode }}" = "full" ] && [ "${{ steps.check.outcome }}" != "skipped" ]; then date -u +%s > last_full.txt; put last_full.txt last_full.txt; fi
       - name: Fail on any problem
-        if: steps.check.outcome != 'success'
+        if: steps.gate.outputs.run == '1' && steps.check.outcome != 'success'
         run: |
           echo "SAFETY_ALERT (see the run summary)"; exit 1

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""DownPayment Desk public safety checker. Python standard library only; looks only at the PUBLIC live site.
+"""DownPayment Desk public safety checker (target: config.json site_base). Python standard library only; looks only at the PUBLIC live site.
 
 quick (hourly): site up, TLS valid >14 days, HTTP->HTTPS, security headers (CSP, HSTS, X-Frame-Options/frame-ancestors,
   X-Content-Type-Options, Referrer-Policy, Permissions-Policy), every sitemap page 200 and free of injected external
@@ -14,9 +14,9 @@ import concurrent.futures as cf, hashlib, json, os, re, socket, ssl, sys, time, 
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 
-BASE = os.environ.get("SITE_BASE", "https://downpaymentdesk.pages.dev").rstrip("/")
-HOST = urllib.parse.urlparse(BASE).hostname
 HERE = os.path.dirname(os.path.abspath(__file__))
+BASE = (os.environ.get("SITE_BASE") or json.load(open(os.path.join(HERE, "config.json")))["site_base"]).rstrip("/")  # target lives in config.json
+HOST = urllib.parse.urlparse(BASE).hostname
 BASELINE_PATH = os.path.join(HERE, "baseline.json")
 BASELINE = json.load(open(BASELINE_PATH)) if os.path.exists(BASELINE_PATH) else {"key_pages": {}}
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 DPD-safety-check"

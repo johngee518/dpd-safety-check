@@ -3,7 +3,9 @@
 Automated, $0 safety check for the public site https://downpaymentdesk.pages.dev.
 Python standard library only, no dependencies. It only reads the public live site; no site code or data lives here.
 
-**Schedule:** hourly at :41 (quick). The 14:41 UTC run (~9:41 AM Central) is the daily full run (adds outbound links).
+**Target:** `config.json` → `site_base` (one change to switch domains; then run `python3 check.py baseline`).
+
+**Schedule:** about hourly. Cron fires at :11/:26/:41/:56 and a gate skips the run if a check finished in the last 40 minutes, because GitHub drops many scheduled runs. The first run after 14:00 UTC (or any run when the last full check is over 26 h old) is the daily full run (adds outbound links).
 Manual run: Actions → DownPayment Desk safety check → Run workflow.
 
 **Quick checks:** site up; TLS valid and more than 14 days from expiry; HTTP redirects to HTTPS; security headers

@@ -1,0 +1,4 @@
+{
+  "_note": "The site this checker watches. To switch domains change site_base only, then run `python3 check.py baseline` after the new site is live.",
+  "site_base": "https://downpaymentdesk.pages.dev"
+}
