@@ -133,7 +133,7 @@
   "www.wvhdf.com",
   "www.wyomingcda.com"
  ],
- "generated": "2026-10-17T15:09:00Z",
+ "generated": "2026-10-18T21:30:40Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -155,10 +155,20 @@
    "skeleton": "down payment calculator with pmi, taxes & insurance | downpayment desk|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
    "skeleton_hash": "03e2febd5b0d0b76"
   },
+  "/es/": {
+   "inline_scripts": 0,
+   "skeleton": "ahorra para tu primera vivienda | downpayment desk|tu camino hasta la puerta de tu casa.|/es/tracker/,/es/calculators/,/es/rates/,/es/homes/,/es/markets/,/blog/,/es/states/",
+   "skeleton_hash": "b5a060a5f3ed1b39"
+  },
   "/first-time-buyer-programs/": {
    "inline_scripts": 0,
    "skeleton": "first-time homebuyer programs & down payment assistance by state | downpayment desk|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
    "skeleton_hash": "52e6c3ff9f811f84"
+  },
+  "/hi/states/texas/": {
+   "inline_scripts": 0,
+   "skeleton": "texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924 | downpayment desk|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets/,/blog/,/hi/states/",
+   "skeleton_hash": "92529a91bd7bb906"
   },
   "/homes/": {
    "inline_scripts": 1,
@@ -169,6 +179,11 @@
    "inline_scripts": 1,
    "skeleton": "how long to save for a down payment? calculator by zip | downpayment desk|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
    "skeleton_hash": "c031ef850062b6b0"
+  },
+  "/ja/": {
+   "inline_scripts": 0,
+   "skeleton": "\u521d\u3081\u3066\u306e\u30de\u30a4\u30db\u30fc\u30e0\u306e\u305f\u3081\u306b\u8caf\u84c4\u3057\u3088\u3046 | downpayment desk|\u308f\u304c\u5bb6\u306e\u7384\u95a2\u307e\u3067\u306e\u9053\u306e\u308a\u3002|/ja/tracker/,/ja/calculators/,/ja/rates/,/ja/homes/,/ja/markets/,/blog/,/ja/states/",
+   "skeleton_hash": "1d570f5cf62ce277"
   },
   "/markets/": {
    "inline_scripts": 1,
@@ -204,9 +219,14 @@
    "inline_scripts": 0,
    "skeleton": "down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
    "skeleton_hash": "71437205a7d5b41d"
+  },
+  "/zh/tracker/": {
+   "inline_scripts": 0,
+   "skeleton": "\u9996\u4ed8\u50a8\u84c4\u8ffd\u8e2a | downpayment desk|\u50a8\u84c4\u8ffd\u8e2a|/zh/tracker/,/zh/calculators/,/zh/rates/,/zh/homes/,/zh/markets/,/blog/,/zh/states/",
+   "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 143,
+ "min_sitemap_pages": 148,
  "redirect_allow": {
   "leg.mt.gov": [
    "mca.legmt.gov"

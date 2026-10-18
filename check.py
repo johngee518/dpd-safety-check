@@ -149,11 +149,19 @@ def check_http_redirect():
     else: add("http->https", "FAIL", f"http:// does not redirect to HTTPS (status {s}, location {loc[:80]!r})")
 
 
+LANG_RE = re.compile(r"^/(es|fr|pt|de|zh|ja|ko|vi|hi)/")  # translated copies of English pages: only the KEY_PAGES ones are fetched
+
+
+def site_paths(body):
+    """Sitemap paths minus language copies (they mirror English pages; a few language KEY_PAGES are checked instead)."""
+    return sorted({p for p in (urllib.parse.urlparse(u).path or "/" for u in re.findall(r"<loc>([^<]+)</loc>", body)) if not LANG_RE.match(p)})
+
+
 def sitemap_paths():
     s, _, _, body, err = get(BASE + "/sitemap.xml")
     if s != 200:
         add("sitemap", "FAIL", f"sitemap.xml returned {s or err}"); return []
-    paths = sorted({urllib.parse.urlparse(u).path or "/" for u in re.findall(r"<loc>([^<]+)</loc>", body)})
+    paths = site_paths(body)
     add("sitemap", "PASS" if len(paths) >= BASELINE.get("min_sitemap_pages", 1) else "FAIL", f"{len(paths)} pages listed")
     return paths
 
@@ -256,13 +264,14 @@ def check_safe_browsing():
 
 
 KEY_PAGES = ["/", "/rates/", "/homes/", "/markets/", "/states/", "/tracker/", "/calculators/", "/down-payment-calculator/",
-             "/how-long-to-save/", "/first-time-buyer-programs/", "/states/texas/", "/sponsor/", "/sponsor-terms/", "/blog/"]
+             "/how-long-to-save/", "/first-time-buyer-programs/", "/states/texas/", "/sponsor/", "/sponsor-terms/", "/blog/",
+             "/es/", "/ja/", "/zh/tracker/", "/hi/states/texas/"]  # language copies (site i18n, docs/I18N.md in the site repo)
 
 
 def make_baseline():
     """Run by hand (python3 check.py baseline) only right after a verified, approved deploy. Reads the public live site."""
     s, _, _, body, _ = get(BASE + "/sitemap.xml")
-    paths = sorted({urllib.parse.urlparse(u).path or "/" for u in re.findall(r"<loc>([^<]+)</loc>", body)} | set(KEY_PAGES))
+    paths = sorted(set(site_paths(body)) | set(KEY_PAGES))
     doms, kp = set(), {}
     for path in paths:
         st, _, _, html, _ = get(BASE + path)
