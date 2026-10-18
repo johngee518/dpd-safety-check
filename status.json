@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.pages.dev",
  "mode": "full",
- "checked_at": "2026-10-18T19:57:12Z",
+ "checked_at": "2026-10-18T20:27:22Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 13,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39161012754",
+ "warn_count": 14,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39163304704",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 8794 bytes"
+   "detail": "HTTP 200, 8859 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "178 pages listed"
+   "detail": "180 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "180 pages checked: 180 clean, 0 with problems"
+   "detail": "182 pages checked: 182 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -56,6 +56,11 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no data yet (normal for a new site)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://dnr.alaska.gov/ssd/recoff/fees unreachable (URLError: <urlopen error timed out>)"
   },
   {
    "check": "link",
@@ -120,7 +125,7 @@
   {
    "check": "outbound links",
    "status": "PASS",
-   "detail": "148 unique: 136 ok, 12 warn, 0 fail"
+   "detail": "148 unique: 135 ok, 13 warn, 0 fail"
   }
  ]
 }
