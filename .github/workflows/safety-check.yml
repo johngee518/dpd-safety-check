@@ -4,6 +4,8 @@ name: DownPayment Desk safety check
 # four times an hour and a gate skips the run if a check already finished in the last 40 minutes => about one real check per hour.
 # The full check (adds every outbound link) runs on the first scheduled run after 14:00 UTC each day, or whenever the
 # last full run is more than 26 h old, so a dropped run can't skip the daily link check.
+# The full run also runs seo_check.py (daily technical SEO: one request at a time, 1.5 s apart, stops at the first 403);
+# a real SEO problem fails the run with an SEO_ALERT summary.
 # Status JSON -> branch `status` (status.json, last_full.txt). Any failure fails the run and the summary starts with SAFETY_ALERT.
 on:
   schedule:
@@ -26,7 +28,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20   # quick runs take ~1 min; the daily full run adds the SEO check (~5 min)
     env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
     steps:
       - name: Gate (skip if a check ran in the last 40 min; pick quick or full)
@@ -51,6 +53,16 @@ jobs:
         env:
           SAFE_BROWSING_KEY: ${{ secrets.SAFE_BROWSING_KEY }}
         run: python3 check.py "${{ steps.gate.outputs.mode }}"
+      - name: Run SEO check (daily, full runs only)
+        id: seo
+        if: steps.gate.outputs.run == '1' && steps.gate.outputs.mode == 'full'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python3 seo_check.py --json seo-report.json | tee seo-report.txt
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.seo.outcome != 'skipped' && steps.gate.outputs.run == '1'
+        with: { name: seo-report, path: "seo-report.*", retention-days: 14, if-no-files-found: ignore }
       - name: Publish status (status branch)
         if: always() && steps.gate.outputs.run == '1'
         run: |
@@ -61,6 +73,8 @@ jobs:
           [ -f status.json ] && put status.json status.json
           if [ "${{ steps.gate.outputs.mode }}" = "full" ] && [ "${{ steps.check.outcome }}" != "skipped" ]; then date -u +%s > last_full.txt; put last_full.txt last_full.txt; fi
       - name: Fail on any problem
-        if: steps.gate.outputs.run == '1' && steps.check.outcome != 'success'
+        if: steps.gate.outputs.run == '1' && (steps.check.outcome != 'success' || steps.seo.outcome == 'failure')
         run: |
-          echo "SAFETY_ALERT (see the run summary)"; exit 1
+          [ "${{ steps.check.outcome }}" != "success" ] && echo "SAFETY_ALERT (see the run summary)"
+          [ "${{ steps.seo.outcome }}" = "failure" ] && { echo "SEO_ALERT (see the run summary)"; grep -E '^\s*\[FAIL\]' seo-report.txt || true; }
+          exit 1

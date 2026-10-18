@@ -19,5 +19,13 @@ when the optional `SAFE_BROWSING_KEY` secret is set).
 redirects to a different domain or parked/for-sale pages fail as possible hijacks (known official moves are listed in
 `baseline.json`). Bot-blocked links (403/429/5xx) are warnings.
 
+**Daily SEO check** (`seo_check.py`, part of the full run; adapted from setaside-safety-check): titles, meta
+descriptions, canonicals, exactly one H1, robots.txt, sitemap (valid XML, right host, every language has the same page
+count), unexpected noindex, JSON-LD validity, image alt text, Open Graph, viewport, `lang`, hreflang reciprocity on 9
+language pages that rotate daily (not all 1,692 URLs), broken internal links (up to 120), and a real 404 for a missing
+URL. Requests go one at a time, 1.5 s apart, and the run stops at the first 403 (reported as a warning: bot-blocked,
+check incomplete). Any FAIL fails the run with an `SEO_ALERT` summary; length and heading-order notes are warnings.
+Manual: `python3 seo_check.py` (target from `config.json`).
+
 **Output:** the run summary (starts with `SAFETY_ALERT` on failure) and `status.json` on the `status` branch.
 After an approved site change, refresh the expected structure with `python3 check.py baseline`.
