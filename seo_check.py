@@ -12,6 +12,8 @@ and checks: titles, meta descriptions, canonical, exactly one H1, heading order,
 noindex, JSON-LD validity/types, image alt text, Open Graph/Twitter tags, viewport,
 lang, favicon, hreflang (and reciprocity on a rotating sample of /<lang>/ pages, not all of them),
 real 404 status, broken internal links, http->https redirect.
+AEO: FAQPage JSON-LD equals the visible FAQ text, Article JSON-LD on posts, /llms.txt, AI crawlers allowed like
+every other bot, visible 'Updated' dates within their windows, and official-source citations on key pages.
 
 Exit code: 0 = no FAIL, 1 = at least one FAIL, 2 = could not run.
 """
@@ -423,9 +425,119 @@ def run(a, rep, out):
     for t in todo:
         r = fetch(t, a.timeout)
         if r["status"] is None or r["status"] >= 400: rep.fail("links", f"broken internal link {t} -> {r['status'] or r['error']}")
+    aeo(host, rep, a, out, urls)
     # real 404
     r = fetch(f"https://{host}/this-page-should-not-exist-{int(time.time())}/", a.timeout)
     (rep.ok if r["status"] == 404 else rep.fail)("site", f"missing URL returns HTTP {r['status']}" + ("" if r["status"] == 404 else " instead of 404 (soft 404)"))
+
+
+# ---------- answer-engine (AEO) checks: FAQ schema = visible text, Article schema, llms.txt, AI bots, freshness, citations ----------
+AI_BOTS = ("GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot")
+AEO_PAGES = {  # path -> max age in days of the visible 'Updated' date (None = page has no data date)
+    "/calculators/": 10, "/tracker/": None, "/rates/": 10, "/mortgage-rates-today/": 10, "/home-values-by-state/": 3,
+    "/homes/": 3, "/states/texas/": 3, "/first-time-buyer-programs/texas/": 3,
+    "/states-with-no-transfer-tax/": 3, "/property-tax-by-state/": 3}
+AEO_LANG_PAGES = ["/states/texas/", "/rates/", "/calculators/", "/tracker/", "/property-tax-by-state/"]
+ZHVI_MAX_DAYS = 80  # Zillow publishes a month's ZHVI mid-way through the next month
+_tagre = re.compile(r"<[^>]+>")
+_txt = lambda s: " ".join(__import__("html").unescape(_tagre.sub("", s)).split())
+
+def robots_groups(body):
+    """{user-agent lowercased: [(directive, value)]} per robots.txt group rules (consecutive User-agent lines share a group)."""
+    groups, cur, last_ua = {}, [], False
+    for line in body.splitlines():
+        line = line.split("#")[0].strip()
+        if not line or ":" not in line: continue
+        k, v = [x.strip() for x in line.split(":", 1)]; k = k.lower()
+        if k == "user-agent":
+            if not last_ua: cur = []
+            cur.append(v.lower()); groups.setdefault(v.lower(), []); last_ua = True
+        else:
+            last_ua = False
+            if k in ("allow", "disallow"):
+                for ua in cur: groups[ua].append((k, v))
+    return groups
+
+def faq_pairs(body):
+    vis = [(_txt(q), _txt(a)) for q, a in re.findall(r'<details class="card faq"><summary>(.*?)</summary><p>(.*?)</p></details>', body, re.S)]
+    ld = []
+    for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', body, re.S):
+        try: o = json.loads(blk)
+        except Exception: continue
+        if isinstance(o, dict) and o.get("@type") == "FAQPage":
+            ld += [(" ".join(str(q.get("name", "")).split()), " ".join(str((q.get("acceptedAnswer") or {}).get("text", "")).split())) for q in o.get("mainEntity", [])]
+    return vis, ld
+
+def aeo(host, rep, a, out, urls):
+    base = f"https://{host}"; today = datetime.date.today(); res = {"pages": 0}
+    # robots: every AI crawler gets the same policy as everyone else (no blocks)
+    rb = fetch(base + "/robots.txt", a.timeout)
+    if rb["status"] == 200:
+        g = robots_groups(rb["body"]); star = sorted(g.get("*", []))
+        for b in AI_BOTS:
+            rules = g.get(b.lower())
+            if rules is None: rep.warn("aeo/robots", f"{b} not listed (falls back to User-agent: *)"); rules = g.get("*", [])
+            if ("disallow", "/") in rules: rep.fail("aeo/robots", f"{b} is blocked (Disallow: /)")
+            elif sorted(rules) != star: rep.warn("aeo/robots", f"{b} rules {rules} differ from User-agent: * {star}")
+        rep.ok("aeo/robots", f"{len(AI_BOTS)} AI crawlers checked against User-agent: *")
+    # llms.txt
+    r = fetch(base + "/llms.txt", a.timeout)
+    if r["status"] != 200: rep.fail("aeo/llms.txt", f"returned {r['status'] or r['error']}")
+    else:
+        links = re.findall(r"\]\((https?://[^)]+)\)", r["body"])
+        if not r["body"].lstrip().startswith("# "): rep.fail("aeo/llms.txt", "does not start with a '# Title' line")
+        elif len([u for u in links if urllib.parse.urlparse(u).netloc == host]) < 5: rep.fail("aeo/llms.txt", f"only {len(links)} key URL links")
+        else: rep.ok("aeo/llms.txt", f"present, {len(links)} links")
+    # key pages (+ a rotating language copy): FAQ ld == visible FAQ, who-line, visible updated date + official citations
+    day = today.toordinal(); lang = LANG_PREFIXES[day % len(LANG_PREFIXES)]
+    pages = [(p, mx) for p, mx in AEO_PAGES.items()] + [(f"/{lang}{AEO_LANG_PAGES[day % len(AEO_LANG_PAGES)]}", AEO_PAGES[AEO_LANG_PAGES[day % len(AEO_LANG_PAGES)]])]
+    for path, mx in pages:
+        r = fetch(base + path, a.timeout)
+        if r["status"] != 200: rep.fail(path, f"AEO page returned {r['status'] or r['error']}"); continue
+        b = r["body"]; res["pages"] += 1
+        vis, ld = faq_pairs(b)
+        if vis and not ld: rep.fail(path, f"{len(vis)} visible FAQ items but no FAQPage JSON-LD")
+        elif ld and vis != ld:
+            diff = next(((v, l) for v, l in zip(vis + [None] * len(ld), ld + [None] * len(vis)) if v != l), None)
+            rep.fail(path, f"FAQPage JSON-LD does not match visible FAQ text (visible {len(vis)}, schema {len(ld)}; first difference {diff})")
+        if 'class="aeo-who"' not in b: rep.warn(path, "no 'who this is for' line")
+        m = re.search(r'<p class="aeo-upd">(.*?)</p>', b, re.S)
+        if mx is not None:
+            if not m: rep.fail(path, "no visible 'Updated' date line"); continue
+            d = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', m.group(1))
+            if not d: rep.fail(path, "'Updated' line has no <time datetime>")
+            else:
+                age = (today - datetime.date.fromisoformat(d.group(1))).days
+                if age > mx: rep.fail(path, f"stale: updated {d.group(1)} ({age} days ago, limit {mx})")
+                elif age < -1: rep.fail(path, f"'Updated' date {d.group(1)} is in the future")
+            cites = [u for u in re.findall(r'href="(https?://[^"]+)"', m.group(1)) if urllib.parse.urlparse(u).netloc != host]
+            if not cites: rep.fail(path, "no official source citation on the 'Updated' line")
+        if path.endswith("/states/texas/"):
+            z = re.search(r"Zillow ZHVI, (\d{4})-(\d{2})", b)
+            if z:
+                age = (today - datetime.date(int(z.group(1)), int(z.group(2)), 1)).days
+                if age > ZHVI_MAX_DAYS: rep.fail(path, f"ZHVI month {z.group(1)}-{z.group(2)} is {age} days old (limit {ZHVI_MAX_DAYS})")
+    rep.ok("aeo/pages", f"{res['pages']} key pages checked (FAQ schema, who-line, freshness, citations)")
+    # Article schema on blog posts (newest post + one rotating)
+    posts = sorted({u for u in urls if re.search(r"/blog/[a-z0-9-]+/$", urllib.parse.urlparse(u).path) and lang_path(u) not in LANG_PREFIXES})
+    for u in list(dict.fromkeys(posts[:1] + posts[day % len(posts):][:1])) if posts else []:
+        path = urllib.parse.urlparse(u).path; r = fetch(base + path, a.timeout)
+        if r["status"] != 200: rep.fail(path, f"returned {r['status']}"); continue
+        arts = []
+        for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', r["body"], re.S):
+            try: o = json.loads(blk)
+            except Exception: continue
+            if isinstance(o, dict) and o.get("@type") in ("Article", "BlogPosting", "NewsArticle"): arts.append(o)
+        if not arts: rep.fail(path, "no Article JSON-LD"); continue
+        o = arts[0]; miss = [k for k in ("headline", "datePublished", "dateModified", "author") if not o.get(k)]
+        if miss: rep.fail(path, f"Article JSON-LD missing {miss}")
+        elif (o["author"] or {}).get("name") != "DownPayment Desk": rep.fail(path, f"Article author is {o['author']!r}, expected 'DownPayment Desk'")
+        elif o["dateModified"] < o["datePublished"]: rep.fail(path, "Article dateModified is before datePublished")
+        else: rep.ok(path, f"Article JSON-LD ok (published {o['datePublished']}, modified {o['dateModified']})")
+    out["aeo"] = res
+
+def lang_path(u):
+    return (urllib.parse.urlparse(u).path.strip("/").split("/") or [""])[0]
 
 
 def main():

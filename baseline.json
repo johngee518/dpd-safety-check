@@ -17,6 +17,7 @@
   "codes.ohio.gov",
   "commerce.mt.gov",
   "dat.maryland.gov",
+  "data.census.gov",
   "dbedt.hawaii.gov",
   "dca.georgia.gov",
   "dhcd.maryland.gov",
@@ -132,9 +133,10 @@
   "www.wheda.com",
   "www.wshfc.org",
   "www.wvhdf.com",
-  "www.wyomingcda.com"
+  "www.wyomingcda.com",
+  "www.zillow.com"
  ],
- "generated": "2026-10-19T11:42:38Z",
+ "generated": "2026-10-19T20:04:28Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -227,7 +229,7 @@
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 149,
+ "min_sitemap_pages": 151,
  "redirect_allow": {
   "leg.mt.gov": [
    "mca.legmt.gov"
