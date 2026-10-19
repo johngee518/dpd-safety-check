@@ -203,6 +203,9 @@ def check_pages():
     return set().union(*(r["links"] for r in res)) if res else set()
 
 
+BOT_CHALLENGE = {"perfdrive.com"}  # bot-protection challenge hosts (Radware validate.perfdrive.com): a bot-block like 403, not a hijack
+
+
 def regdom(h):
     parts = (h or "").lower().split(".")
     if len(parts) >= 3 and parts[-2] in ("co", "com", "org", "gov", "ac", "net") and len(parts[-1]) == 2: return ".".join(parts[-3:])
@@ -214,6 +217,7 @@ def link_check(u):
     h0, h1 = urllib.parse.urlparse(u).hostname or "", urllib.parse.urlparse(final).hostname or ""
     if s and h1 and regdom(h0) != regdom(h1):
         if regdom(h1) in [regdom(x) for x in REDIRECT_ALLOW.get(h0, [])]: return "PASS", f"{u} -> {final} (known official move)"
+        if regdom(h1) in BOT_CHALLENGE: return "WARN", f"{u} sent this runner to a bot challenge ({h1}); bot-block, not a hijack"
         return "FAIL", f"{u} redirects to a different domain {final} (possible hijack)"
     if s == 200 and PARKED.search(body or ""): return "FAIL", f"{u} looks like a parked/for-sale page (possible hijack)"
     if 200 <= (s or 0) < 400: return "PASS", u
