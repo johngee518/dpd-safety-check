@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.pages.dev",
  "mode": "full",
- "checked_at": "2026-10-19T11:43:53Z",
- "status": "FAIL",
- "fail_count": 2,
- "warn_count": 32,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39246620691",
+ "checked_at": "2026-10-19T11:49:35Z",
+ "status": "WARN",
+ "fail_count": 0,
+ "warn_count": 14,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39247322420",
  "results": [
   {
    "check": "tls",
@@ -60,11 +60,6 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://codes.ohio.gov/ohio-revised-code/section-319.54 unreachable (URLError: <urlopen error timed out>)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
    "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
   },
   {
@@ -95,66 +90,6 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://tax.ri.gov/tax-sections/sales-excise-taxes/real-estate-conveyance-tax HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.chfainfo.com HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.chfainfo.com/homeownership/down-payment-assistance HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-or-points-en-136/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-en-1791/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-loan-estimate-en-1995/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/consumer-tools/debt-collection/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/owning-a-home/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.consumerfinance.gov/owning-a-home/explore-rates/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
    "detail": "https://www.maine.gov/revenue/taxes/property-tax/transfer-tax HTTP 403 (bot-block or server error)"
   },
   {
@@ -165,27 +100,7 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://www.michigan.gov/mshda HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.michigan.gov/mshda/pathway-to-housing/mi-10k-dpa-loan HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.michigan.gov/taxes/business-taxes/misc/state-real-estate-transfer-tax-srett HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
    "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.phfa.org unreachable (URLError: <urlopen error timed out>)"
   },
   {
    "check": "link",
@@ -199,28 +114,18 @@
   },
   {
    "check": "link",
-   "status": "FAIL",
-   "detail": "https://www.revenue.state.mn.us/deed-tax redirects to a different domain http://validate.perfdrive.com/?ssa=136ee67b-73f0-4e08-8d24-443ac58000ad&ssb=71041259051&ssc=https%3A%2F%2Fwww.revenue.state.mn.us%2Fdeed-tax&ssi=ab3b3b0a-bq5f-4e5e-83ba-0b9815c6ef3b&ssk=support@shieldsquare.com&ssm=70414475397627790103270411776972&ssn=fc55dcf7d25d91d970bb31d4eebd3f24610453f26afd-99a4-4107-a6c66c&sso=56639847-"
+   "status": "WARN",
+   "detail": "https://www.revenue.wi.gov/Pages/RETr/Home.aspx unreachable (URLError: <urlopen error timed out>)"
   },
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://www.tdhca.texas.gov HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.utahhousingcorp.org unreachable (URLError: <urlopen error timed out>)"
+   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
   },
   {
    "check": "outbound links",
-   "status": "FAIL",
-   "detail": "150 unique: 118 ok, 31 warn, 1 fail"
+   "status": "PASS",
+   "detail": "150 unique: 137 ok, 13 warn, 0 fail"
   }
  ]
 }
