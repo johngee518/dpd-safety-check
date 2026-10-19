@@ -136,7 +136,7 @@
   "www.wyomingcda.com",
   "www.zillow.com"
  ],
- "generated": "2026-10-19T20:04:28Z",
+ "generated": "2026-10-19T22:17:09Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -229,7 +229,7 @@
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 151,
+ "min_sitemap_pages": 152,
  "redirect_allow": {
   "leg.mt.gov": [
    "mca.legmt.gov"
