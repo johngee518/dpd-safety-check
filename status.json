@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.pages.dev",
  "mode": "quick",
- "checked_at": "2026-10-19T06:05:05Z",
+ "checked_at": "2026-10-19T11:14:00Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39207870658",
+ "warn_count": 2,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39243113546",
  "results": [
   {
    "check": "tls",
@@ -54,8 +54,8 @@
   },
   {
    "check": "safe browsing (transparency report)",
-   "status": "PASS",
-   "detail": "no data yet (normal for a new site)"
+   "status": "WARN",
+   "detail": "lookup unavailable (status 429)"
   }
  ]
 }
