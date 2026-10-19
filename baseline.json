@@ -95,6 +95,7 @@
   "www.natronacounty-wy.gov",
   "www.ncdor.gov",
   "www.nchfa.com",
+  "www.ncsha.org",
   "www.ndcourts.gov",
   "www.ndhousing.nd.gov",
   "www.nhhousing.org",
@@ -133,7 +134,7 @@
   "www.wvhdf.com",
   "www.wyomingcda.com"
  ],
- "generated": "2026-10-18T21:58:21Z",
+ "generated": "2026-10-19T11:42:38Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -142,18 +143,18 @@
   },
   "/blog/": {
    "inline_scripts": 1,
-   "skeleton": "the stash: guides to saving, home buying, mortgages, investing and debt | downpayment desk|the stash|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "e9472d833d5be4f8"
+   "skeleton": "the stash: saving, home buying, mortgage & investing guides|the stash|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "8ae9b59f0e38832c"
   },
   "/calculators/": {
    "inline_scripts": 1,
-   "skeleton": "mortgage, affordability, closing cost & rent vs buy calculators | downpayment desk|calculators|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "8543cbc78c665693"
+   "skeleton": "mortgage, affordability & rent vs buy calculators|calculators|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "d7d97d1dd14898d0"
   },
   "/down-payment-calculator/": {
    "inline_scripts": 1,
-   "skeleton": "down payment calculator with pmi, taxes & insurance | downpayment desk|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "03e2febd5b0d0b76"
+   "skeleton": "down payment calculator with pmi, taxes & insurance|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "8adc8d9820efc56f"
   },
   "/es/": {
    "inline_scripts": 0,
@@ -162,13 +163,13 @@
   },
   "/first-time-buyer-programs/": {
    "inline_scripts": 0,
-   "skeleton": "first-time homebuyer programs & down payment assistance by state | downpayment desk|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "52e6c3ff9f811f84"
+   "skeleton": "first-time buyer & down payment assistance by state|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "c9f002563ab0c307"
   },
   "/hi/states/texas/": {
    "inline_scripts": 0,
-   "skeleton": "texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924 | downpayment desk|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets/,/blog/,/hi/states/",
-   "skeleton_hash": "92529a91bd7bb906"
+   "skeleton": "texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets/,/blog/,/hi/states/",
+   "skeleton_hash": "ce33acda587bcdbb"
   },
   "/homes/": {
    "inline_scripts": 1,
@@ -177,8 +178,8 @@
   },
   "/how-long-to-save/": {
    "inline_scripts": 1,
-   "skeleton": "how long to save for a down payment? calculator by zip | downpayment desk|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "c031ef850062b6b0"
+   "skeleton": "how long to save for a down payment? calculator by zip|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "17da9d2ed71b301d"
   },
   "/ja/": {
    "inline_scripts": 0,
@@ -187,8 +188,8 @@
   },
   "/markets/": {
    "inline_scripts": 1,
-   "skeleton": "mon search: crypto, energy & commodities | downpayment desk|mon|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "f080a9ec2d2a667e"
+   "skeleton": "mon search: crypto, energy & commodities|mon|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "0e345cd94bc4772d"
   },
   "/rates/": {
    "inline_scripts": 1,
@@ -207,13 +208,13 @@
   },
   "/states/": {
    "inline_scripts": 0,
-   "skeleton": "home buying costs by state: property tax, transfer tax & home values | downpayment desk|home buying costs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "dc9b69c99d50e59b"
+   "skeleton": "home buying costs by state: property & transfer taxes|home buying costs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "02f71dfd883371c7"
   },
   "/states/texas/": {
    "inline_scripts": 0,
-   "skeleton": "texas property tax, transfer tax & closing costs | downpayment desk|buying a home in texas|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "85702596be8b4175"
+   "skeleton": "texas property tax, transfer tax & closing costs|buying a home in texas|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "302d6db743f12768"
   },
   "/tracker/": {
    "inline_scripts": 0,
@@ -226,7 +227,7 @@
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 148,
+ "min_sitemap_pages": 149,
  "redirect_allow": {
   "leg.mt.gov": [
    "mca.legmt.gov"

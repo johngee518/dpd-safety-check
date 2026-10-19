@@ -15,7 +15,7 @@ real 404 status, broken internal links, http->https redirect.
 
 Exit code: 0 = no FAIL, 1 = at least one FAIL, 2 = could not run.
 """
-import argparse, json, os, re, sys, ssl, gzip, time, datetime
+import argparse, json, os, re, sys, ssl, gzip, time, datetime, unicodedata
 import urllib.request, urllib.error, urllib.parse
 from html.parser import HTMLParser
 import xml.etree.ElementTree as ET
@@ -36,6 +36,12 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *a, **k):
         return None
 
+
+
+def disp_len(s):
+    """Length as search results show it: full-width CJK characters count 2 (they take about twice the width of
+    Latin letters) and zero-width combining marks (e.g. many Devanagari vowel signs) count 0. Same as len() for English."""
+    return sum(0 if unicodedata.category(c) == "Mn" else 2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in s)
 
 def fetch(url, timeout=15, follow=True, method="GET"):
     """Return dict(status, url, headers, body, error, redirects)."""
@@ -213,8 +219,8 @@ def check_page(url, base_host, rep, timeout, all_titles, all_descs, link_targets
     if not t:
         rep.fail(path, "missing <title>")
     else:
-        if not 30 <= len(t) <= 65:
-            rep.warn(path, f"title length {len(t)} (aim 30-60): {t!r}")
+        if not 30 <= disp_len(t) <= 65:
+            rep.warn(path, f"title length {disp_len(t)} (aim 30-60): {t!r}")
         all_titles.setdefault(t, []).append(path)
     # description
     d = " ".join((p.meta("description") or "").split())
@@ -222,8 +228,8 @@ def check_page(url, base_host, rep, timeout, all_titles, all_descs, link_targets
     if not d:
         rep.fail(path, "missing meta description")
     else:
-        if not 70 <= len(d) <= 165:
-            rep.warn(path, f"meta description length {len(d)} (aim 70-160)")
+        if not 70 <= disp_len(d) <= 165:
+            rep.warn(path, f"meta description length {disp_len(d)} (aim 70-160)")
         all_descs.setdefault(d, []).append(path)
     # canonical
     canon = [l.get("href") for l in p.links if "canonical" in l.get("rel", "").lower().split()]
