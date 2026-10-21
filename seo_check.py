@@ -213,7 +213,10 @@ def check_page(url, base_host, rep, timeout, all_titles, all_descs, link_targets
     info = {"url": url, "bytes": r.get("bytes", 0), "scripts": p.scripts, "styles": p.styles}
     # robots meta / header
     robots = (p.meta("robots") or "") + " " + (p.meta("googlebot") or "") + " " + str(r["headers"].get("X-Robots-Tag", ""))
-    if "noindex" in robots.lower():
+    if EXPECT_NOINDEX:  # pre-launch: noindex, nofollow in BOTH meta and header is required
+        if "noindex" not in (p.meta("robots") or "").lower(): rep.fail(path, "pre-launch noindex meta MISSING (config expect_noindex=true)")
+        if "noindex" not in str(r["headers"].get("X-Robots-Tag", "")).lower(): rep.fail(path, "pre-launch X-Robots-Tag noindex MISSING (config expect_noindex=true)")
+    elif "noindex" in robots.lower():
         rep.fail(path, "page is set to noindex (meta robots or X-Robots-Tag)")
     # title
     t = " ".join((p.title or "").split())
@@ -357,9 +360,11 @@ def run(a, rep, out):
             if line.lower().startswith("user-agent:"): cur_ua = line.split(":", 1)[1].strip()
             elif line.lower().startswith("disallow:") and cur_ua in ("*", "Googlebot"):
                 val = line.split(":", 1)[1].strip()
-                if val == "/": rep.fail("robots.txt", f"Disallow: / for {cur_ua} blocks the whole site")
+                if val == "/" and EXPECT_NOINDEX and cur_ua == "*": blocks.append("/ (pre-launch, expected)")
+                elif val == "/": rep.fail("robots.txt", f"Disallow: / for {cur_ua} blocks the whole site")
                 elif val: blocks.append(val)
-        rep.ok("robots.txt", "allows crawling" + (" except " + ", ".join(blocks) if blocks else ""))
+        if EXPECT_NOINDEX and "/ (pre-launch, expected)" not in blocks: rep.fail("robots.txt", "pre-launch Disallow: / MISSING (config expect_noindex=true)")
+        else: rep.ok("robots.txt", "allows crawling" + (" except " + ", ".join(blocks) if blocks else ""))
         if not sitemaps: rep.warn("robots.txt", "no Sitemap: line")
     # sitemap (parsed, structure checked; every English URL's status is already checked hourly by check.py)
     urls, probs = [], []
@@ -477,7 +482,7 @@ def aeo(host, rep, a, out, urls):
         for b in AI_BOTS:
             rules = g.get(b.lower())
             if rules is None: rep.warn("aeo/robots", f"{b} not listed (falls back to User-agent: *)"); rules = g.get("*", [])
-            if ("disallow", "/") in rules: rep.fail("aeo/robots", f"{b} is blocked (Disallow: /)")
+            if ("disallow", "/") in rules and not EXPECT_NOINDEX: rep.fail("aeo/robots", f"{b} is blocked (Disallow: /)")
             elif sorted(rules) != star: rep.warn("aeo/robots", f"{b} rules {rules} differ from User-agent: * {star}")
         rep.ok("aeo/robots", f"{len(AI_BOTS)} AI crawlers checked against User-agent: *")
     # llms.txt
@@ -540,6 +545,11 @@ def lang_path(u):
     return (urllib.parse.urlparse(u).path.strip("/").split("/") or [""])[0]
 
 
+def expect_noindex():
+    try: return bool(json.load(open(os.path.join(HERE, "config.json"))).get("expect_noindex", False))
+    except Exception: return False
+EXPECT_NOINDEX = None
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("base", nargs="?", default=json.load(open(os.path.join(HERE, "config.json")))["site_base"])
@@ -551,6 +561,7 @@ def main():
     ap.add_argument("--warn-only", action="store_true", help="always exit 0")
     ap.add_argument("--skip-http", action="store_true", help="skip the http:// -> https:// check (port 80 blocked)")
     a = ap.parse_args()
+    global EXPECT_NOINDEX; EXPECT_NOINDEX = expect_noindex()
     if not a.base.startswith("http"): a.base = "https://" + a.base
     rep, out, blocked = Report(), {}, None
     t0 = time.time()

@@ -41,7 +41,6 @@
   "legislature.idaho.gov",
   "mca.legmt.gov",
   "mhdc.com",
-  "myfico.com",
   "ncua.gov",
   "opportunityiowa.gov",
   "otr.cfo.dc.gov",
@@ -104,7 +103,6 @@
   "www.nhhousing.org",
   "www.nifa.org",
   "www.nj.gov",
-  "www.ohcs.oregon.gov",
   "www.ohfa.org",
   "www.ohiohome.org",
   "www.ok.gov",
@@ -138,7 +136,7 @@
   "www.wyomingcda.com",
   "www.zillow.com"
  ],
- "generated": "2026-10-19T22:17:09Z",
+ "generated": "2026-10-21T19:45:49Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -231,7 +229,7 @@
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 152,
+ "min_sitemap_pages": 153,
  "preapproved_domains": [
   "entp.hud.gov",
   "files.consumerfinance.gov",
