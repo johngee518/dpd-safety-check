@@ -1,6 +1,6 @@
 {
   "_note": "The site this checker watches. To switch domains change site_base only, then run `python3 check.py baseline` after the new site is live.",
   "site_base": "https://downpaymentdesk.com",
-  "expect_noindex": true,
-  "_expect_noindex_note": "true while the site is pre-launch (noindex meta + X-Robots-Tag + robots Disallow: /). seo_check then FAILS if any of those go missing. Set false at go-public."
+  "expect_noindex": false,
+  "_expect_noindex_note": "false since go-public 2026-10-21 (seo_check FAILS if noindex meta/X-Robots-Tag or Disallow: / reappears). Was true while pre-launch (noindex meta + X-Robots-Tag + robots Disallow: /). seo_check then FAILS if any of those go missing. Set false at go-public."
 }

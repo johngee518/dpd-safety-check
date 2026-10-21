@@ -11,6 +11,7 @@
   "api.bigdatacloud.net",
   "api.coingecko.com",
   "api.gold-api.com",
+  "app.kit.com",
   "ballotpedia.org",
   "code.dccouncil.gov",
   "code.wvlegislature.gov",
@@ -29,6 +30,7 @@
   "floridarevenue.com",
   "fred.stlouisfed.org",
   "gc.nh.gov",
+  "github.com",
   "hcr.ny.gov",
   "housing.az.gov",
   "housing.nv.gov",
@@ -136,7 +138,7 @@
   "www.wyomingcda.com",
   "www.zillow.com"
  ],
- "generated": "2026-10-21T19:45:49Z",
+ "generated": "2026-10-21T21:16:52Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
