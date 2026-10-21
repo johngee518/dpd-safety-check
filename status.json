@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "quick",
- "checked_at": "2026-10-21T20:56:22Z",
- "status": "FAIL",
- "fail_count": 193,
- "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39674566232",
+ "mode": "full",
+ "checked_at": "2026-10-21T21:18:00Z",
+ "status": "WARN",
+ "fail_count": 0,
+ "warn_count": 15,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39677505151",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 14286 bytes"
+   "detail": "HTTP 200, 14594 bytes"
   },
   {
    "check": "headers /",
@@ -31,966 +31,6 @@
    "check": "sitemap",
    "status": "PASS",
    "detail": "186 pages listed"
-  },
-  {
-   "check": "page /",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/closing-costs/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/compare-mortgage-rates/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/credit-score-mortgage/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/debt-payoff/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/first-time-buyer-programs/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/habits/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/how-much-down-payment/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/hysa/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/index-funds-basics/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/pmi/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /blog/where/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /calculators/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /disclosure/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /down-payment-calculator/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /es/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/alabama/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/alaska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/arizona/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/arkansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/california/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/colorado/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/connecticut/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/delaware/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/district-of-columbia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/florida/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/georgia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/hawaii/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/idaho/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/illinois/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/indiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/iowa/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/kansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/kentucky/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/louisiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/maine/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/maryland/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/massachusetts/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/michigan/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/minnesota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/mississippi/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/missouri/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/montana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/nebraska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/nevada/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/new-hampshire/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/new-jersey/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/new-mexico/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/new-york/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/north-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/north-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/ohio/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/oklahoma/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/oregon/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/pennsylvania/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/rhode-island/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/south-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/south-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/tennessee/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/texas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/utah/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/vermont/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/washington/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/west-virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/wisconsin/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /first-time-buyer-programs/wyoming/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /hi/states/texas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /home-values-by-state/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /homes/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /how-long-to-save/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /ja/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /markets/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /mortgage-rates-today/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /privacy/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /property-tax-by-state/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /rates/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /recap/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /recap/2026-09/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /recap/2026-10/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /sponsor-terms/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /sponsor/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states-with-no-transfer-tax/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/alabama/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/alaska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/arizona/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/arkansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/california/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/colorado/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/connecticut/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/delaware/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/district-of-columbia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/florida/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/georgia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/hawaii/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/idaho/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/illinois/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/indiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/iowa/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/kansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/kentucky/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/louisiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/maine/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/maryland/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/massachusetts/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/michigan/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/minnesota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/mississippi/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/missouri/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/montana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/nebraska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/nevada/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/new-hampshire/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/new-jersey/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/new-mexico/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/new-york/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/north-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/north-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/ohio/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/oklahoma/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/oregon/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/pennsylvania/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/rhode-island/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/south-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/south-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/tennessee/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/texas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/utah/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/vermont/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/washington/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/west-virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/wisconsin/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /states/wyoming/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /terms/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /tracker/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zh/tracker/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/alabama/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/alaska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/arizona/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/arkansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/california/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/colorado/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/connecticut/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/delaware/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/district-of-columbia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/florida/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/georgia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/hawaii/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/idaho/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/illinois/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/indiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/iowa/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/kansas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/kentucky/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/louisiana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/maine/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/maryland/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/massachusetts/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/michigan/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/minnesota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/mississippi/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/missouri/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/montana/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/nebraska/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/nevada/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/new-hampshire/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/new-jersey/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/new-mexico/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/new-york/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/north-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/north-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/ohio/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/oklahoma/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/oregon/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/pennsylvania/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/rhode-island/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/south-carolina/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/south-dakota/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/tennessee/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/texas/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/utah/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/vermont/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/washington/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/west-virginia/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/wisconsin/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
-  },
-  {
-   "check": "page /zip-home-values/wyoming/",
-   "status": "FAIL",
-   "detail": "unknown external domains ['app.kit.com']"
   },
   {
    "check": "headers /rates/",
@@ -1004,8 +44,8 @@
   },
   {
    "check": "pages",
-   "status": "FAIL",
-   "detail": "192 pages checked: 0 clean, 192 with problems"
+   "status": "PASS",
+   "detail": "192 pages checked: 192 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -1016,6 +56,81 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://hcr.ny.gov HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://housing.az.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "outbound links",
+   "status": "PASS",
+   "detail": "158 unique: 144 ok, 14 warn, 0 fail"
   }
  ]
 }
