@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.pages.dev",
- "mode": "full",
- "checked_at": "2026-10-21T14:16:23Z",
+ "mode": "quick",
+ "checked_at": "2026-10-21T15:26:51Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 16,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39615270975",
+ "warn_count": 1,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39625724476",
  "results": [
   {
    "check": "tls",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "185 pages listed"
+   "detail": "186 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "191 pages checked: 191 clean, 0 with problems"
+   "detail": "192 pages checked: 192 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -56,86 +56,6 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no data yet (normal for a new site)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://code.wvlegislature.gov/11-22-2/ unreachable (URLError: <urlopen error timed out>)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://hcr.ny.gov HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://housing.az.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://otr.cfo.dc.gov/page/rod-faqs unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "outbound links",
-   "status": "PASS",
-   "detail": "155 unique: 140 ok, 15 warn, 0 fail"
   }
  ]
 }
