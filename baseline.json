@@ -232,6 +232,18 @@
   }
  },
  "min_sitemap_pages": 152,
+ "preapproved_domains": [
+  "entp.hud.gov",
+  "files.consumerfinance.gov",
+  "studentaid.gov",
+  "www.census.gov",
+  "www.epa.gov",
+  "www.floodsmart.gov",
+  "www.ic3.gov",
+  "www.irs.gov",
+  "www.nar.realtor",
+  "www.ncua.gov"
+ ],
  "redirect_allow": {
   "leg.mt.gov": [
    "mca.legmt.gov"

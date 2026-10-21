@@ -25,7 +25,7 @@ REQUIRED_HEADERS = ["content-security-policy", "strict-transport-security", "x-c
                     "referrer-policy", "permissions-policy"]
 ALLOWED_SCRIPT_HOSTS = set(BASELINE.get("allowed_script_hosts", []))
 ALLOWED_SCRIPT_SUFFIX = tuple(BASELINE.get("allowed_script_suffixes", []))
-KNOWN_DOMAINS = set(BASELINE.get("external_domains", []))
+KNOWN_DOMAINS = set(BASELINE.get("external_domains", [])) | set(BASELINE.get("preapproved_domains", []))  # preapproved = official sources cited in queued blog posts (kept across baseline regens)
 REDIRECT_ALLOW = BASELINE.get("redirect_allow", {})
 PARKED = re.compile(r"domain (is|may be) for sale|buy this domain|this domain is parked|parked free|domain parking|hugedomains|sedo\.com/search", re.I)
 SB_KEY = os.environ.get("SAFE_BROWSING_KEY", "").strip()
@@ -288,7 +288,7 @@ def make_baseline():
            "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "min_sitemap_pages": max(1, int(len(paths) * 0.8)),
            "allowed_script_hosts": old.get("allowed_script_hosts", ["f.convertkit.com"]),
            "allowed_script_suffixes": old.get("allowed_script_suffixes", [".kit.com"]),
-           "redirect_allow": old.get("redirect_allow", {}), "external_domains": sorted(doms), "key_pages": kp}
+           "redirect_allow": old.get("redirect_allow", {}), "preapproved_domains": old.get("preapproved_domains", []), "external_domains": sorted(doms), "key_pages": kp}
     json.dump(out, open(BASELINE_PATH, "w"), indent=1, sort_keys=True)
     print(f"baseline: {len(paths)} pages, {len(doms)} external domains, {len(kp)} key pages")
     return 0
