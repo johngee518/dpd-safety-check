@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "full",
- "checked_at": "2026-10-22T15:25:45Z",
- "status": "WARN",
- "fail_count": 0,
- "warn_count": 15,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39804567468",
+ "mode": "quick",
+ "checked_at": "2026-10-22T18:28:46Z",
+ "status": "FAIL",
+ "fail_count": 53,
+ "warn_count": 1,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/39831701505",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 14594 bytes"
+   "detail": "HTTP 200, 17514 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,267 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "186 pages listed"
+   "detail": "241 pages listed"
+  },
+  {
+   "check": "page /electricity-rates/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/alabama/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/alaska/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/arizona/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/arkansas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/california/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/colorado/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/connecticut/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/delaware/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/district-of-columbia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/florida/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/georgia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/hawaii/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/idaho/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/illinois/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/indiana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/iowa/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/kansas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/kentucky/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/louisiana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/maine/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/maryland/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/massachusetts/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/michigan/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/minnesota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/mississippi/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/missouri/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/montana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/nebraska/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/nevada/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/new-hampshire/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/new-jersey/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/new-mexico/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/new-york/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/north-carolina/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/north-dakota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/ohio/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/oklahoma/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/oregon/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/pennsylvania/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/rhode-island/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/south-carolina/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/south-dakota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/tennessee/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/texas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/utah/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/vermont/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/virginia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/washington/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/west-virginia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/wisconsin/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
+  },
+  {
+   "check": "page /electricity-rates/wyoming/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['data.openei.org', 'www.eia.gov']"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +304,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "192 pages checked: 192 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "247 pages checked: 195 clean, 52 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -56,81 +316,6 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://hcr.ny.gov HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://housing.az.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "outbound links",
-   "status": "PASS",
-   "detail": "158 unique: 144 ok, 14 warn, 0 fail"
   }
  ]
 }
