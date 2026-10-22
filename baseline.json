@@ -1,7 +1,8 @@
 {
  "_note": "Expected public structure of the live site. Regenerate only after an approved deploy: python3 check.py baseline",
  "allowed_script_hosts": [
-  "f.convertkit.com"
+  "f.convertkit.com",
+  "static.cloudflareinsights.com"
  ],
  "allowed_script_suffixes": [
   ".kit.com"
@@ -19,6 +20,7 @@
   "commerce.mt.gov",
   "dat.maryland.gov",
   "data.census.gov",
+  "data.openei.org",
   "dbedt.hawaii.gov",
   "dca.georgia.gov",
   "dhcd.maryland.gov",
@@ -72,6 +74,7 @@
   "www.delcode.delaware.gov",
   "www.destatehousing.com",
   "www.dfa.arkansas.gov",
+  "www.eia.gov",
   "www.fdic.gov",
   "www.federalreserve.gov",
   "www.floridahousing.org",
@@ -138,7 +141,7 @@
   "www.wyomingcda.com",
   "www.zillow.com"
  ],
- "generated": "2026-10-21T21:16:52Z",
+ "generated": "2026-10-22T19:03:42Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -231,10 +234,12 @@
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 153,
+ "min_sitemap_pages": 197,
  "preapproved_domains": [
+  "cloudflareinsights.com",
   "entp.hud.gov",
   "files.consumerfinance.gov",
+  "static.cloudflareinsights.com",
   "studentaid.gov",
   "www.census.gov",
   "www.epa.gov",
