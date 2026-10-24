@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-24T20:40:46Z",
- "status": "WARN",
- "fail_count": 0,
+ "checked_at": "2026-10-24T21:59:29Z",
+ "status": "FAIL",
+ "fail_count": 4,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40130850151",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40136591554",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 17514 bytes"
+   "detail": "HTTP 200, 19503 bytes"
   },
   {
    "check": "headers /",
@@ -31,6 +31,21 @@
    "check": "sitemap",
    "status": "PASS",
    "detail": "243 pages listed"
+  },
+  {
+   "check": "page /",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /es/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /ja/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +59,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "249 pages checked: 249 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "249 pages checked: 246 clean, 3 with problems"
   },
   {
    "check": "safe browsing (API)",
