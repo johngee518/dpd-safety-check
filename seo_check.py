@@ -54,7 +54,7 @@ def fetch(url, timeout=15, follow=True, method="GET"):
         wait = PAUSE - (time.time() - _last[0])
         if wait > 0: time.sleep(wait)
         _last[0] = time.time()
-        req = urllib.request.Request(cur, method=method, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Language": "en-US,en;q=0.8"})  # same request shape as check.py
+        req = urllib.request.Request(cur, method=method, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.8"})  # same request shape as check.py
         try:
             r = opener.open(req, timeout=timeout)
             status, headers, body = r.status, r.headers, r.read()

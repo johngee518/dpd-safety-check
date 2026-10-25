@@ -19,6 +19,7 @@ BASE = (os.environ.get("SITE_BASE") or json.load(open(os.path.join(HERE, "config
 HOST = urllib.parse.urlparse(BASE).hostname
 BASELINE_PATH = os.path.join(HERE, "baseline.json")
 BASELINE = json.load(open(BASELINE_PATH)) if os.path.exists(BASELINE_PATH) else {"key_pages": {}}
+ALLOWED_INLINE_HASHES = {"sha256-ECYsGc1sgmddihTzieo6EunLK0YzxopjbLsr+9GdTOw="}  # DPD intentional inline script
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 DPD-safety-check"
 MODE = (sys.argv[1] if len(sys.argv) > 1 else "quick").lower()
 REQUIRED_HEADERS = ["content-security-policy", "strict-transport-security", "x-content-type-options",
@@ -48,7 +49,7 @@ def get(url, timeout=20, follow=True, maxbytes=3_000_000, tries=2):
     for i in range(tries):
         try:
             op = urllib.request.build_opener() if follow else urllib.request.build_opener(NoRedir)
-            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Language": "en-US,en;q=0.8"})
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.8"})
             with op.open(req, timeout=timeout) as r:
                 return r.status, r.geturl(), {k.lower(): v for k, v in r.headers.items()}, r.read(maxbytes).decode("utf-8", "replace"), None
         except urllib.error.HTTPError as e:
@@ -94,6 +95,10 @@ class Skel(HTMLParser):
         if self._in and tag == self._in:
             t = "".join(self._buf)
             if tag == "script":
+                import base64
+                # skel() escapes bare "&" before parsing, so also hash the un-escaped script text
+                if any("sha256-" + base64.b64encode(hashlib.sha256(x.encode()).digest()).decode() in ALLOWED_INLINE_HASHES for x in (t, t.replace("&amp;", "&"))):
+                    self.inline_scripts -= 1; self._in = None; return
                 self.inline_hosts |= {h.lower() for h in re.findall(r"https?://([a-zA-Z0-9.-]+)", t) if h.lower() != HOST}
             else: setattr(self, tag, t)
             self._in = None
