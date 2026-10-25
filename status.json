@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-25T16:03:07Z",
+ "checked_at": "2026-10-25T17:50:41Z",
  "status": "WARN",
  "fail_count": 0,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40209804724",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40218395737",
  "results": [
   {
    "check": "tls",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "243 pages listed"
+   "detail": "244 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "249 pages checked: 249 clean, 0 with problems"
+   "detail": "250 pages checked: 250 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
