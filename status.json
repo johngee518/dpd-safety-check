@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-26T05:27:50Z",
+ "checked_at": "2026-10-26T06:30:20Z",
  "status": "WARN",
  "fail_count": 0,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40274327724",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40280170491",
  "results": [
   {
    "check": "tls",
