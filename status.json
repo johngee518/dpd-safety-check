@@ -1,16 +1,16 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-27T18:24:04Z",
- "status": "WARN",
- "fail_count": 0,
+ "checked_at": "2026-10-27T20:01:36Z",
+ "status": "FAIL",
+ "fail_count": 19,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40559579746",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40574298227",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (84 days)"
+   "detail": "valid, expires 2027-01-19 (83 days)"
   },
   {
    "check": "http->https",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 20553 bytes"
+   "detail": "HTTP 200, 20674 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,97 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "245 pages listed"
+   "detail": "246 pages listed"
+  },
+  {
+   "check": "page /",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /blog/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /calculators/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /down-payment-calculator/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /es/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /first-time-buyer-programs/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /hi/states/texas/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /homes/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /how-long-to-save/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /ja/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /markets/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /rates/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2"
+  },
+  {
+   "check": "page /sponsor-terms/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /sponsor/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /states/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /states/texas/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /tracker/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
+  },
+  {
+   "check": "page /zh/tracker/",
+   "status": "FAIL",
+   "detail": "inline scripts 0->1"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +134,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "251 pages checked: 251 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "252 pages checked: 234 clean, 18 with problems"
   },
   {
    "check": "safe browsing (API)",
