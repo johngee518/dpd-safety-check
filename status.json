@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-28T01:49:31Z",
+ "checked_at": "2026-10-28T05:27:52Z",
  "status": "FAIL",
  "fail_count": 19,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40617298817",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40638120800",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 20674 bytes"
+   "detail": "HTTP 200, 23666 bytes"
   },
   {
    "check": "headers /",
@@ -95,12 +95,12 @@
   {
    "check": "page /sponsor-terms/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->1; title/h1/nav changed: 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/homes/,/market' (expected 'sponsor terms | downpayment desk|sponsor terms|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
   },
   {
    "check": "page /sponsor/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->1; title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/' (expected 'sponsor downpayment desk | downpayment desk|put your brand in front of first-time home buyers.|/tracker/,/calculators/,/rates/,/homes/,/mark')"
   },
   {
    "check": "page /states/",
