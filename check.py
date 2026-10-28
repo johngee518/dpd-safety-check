@@ -19,7 +19,7 @@ BASE = (os.environ.get("SITE_BASE") or json.load(open(os.path.join(HERE, "config
 HOST = urllib.parse.urlparse(BASE).hostname
 BASELINE_PATH = os.path.join(HERE, "baseline.json")
 BASELINE = json.load(open(BASELINE_PATH)) if os.path.exists(BASELINE_PATH) else {"key_pages": {}}
-ALLOWED_INLINE_HASHES = {"sha256-ECYsGc1sgmddihTzieo6EunLK0YzxopjbLsr+9GdTOw="}  # DPD intentional inline script
+ALLOWED_INLINE_HASHES = {"sha256-ECYsGc1sgmddihTzieo6EunLK0YzxopjbLsr+9GdTOw=", "sha256-Ni/TnjU4ve2ecbpdortoKdeVRg4rt+KrYzktKoUuX0g="}  # DPD intentional inline scripts (tip-off, compact-nav check)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 DPD-safety-check"
 MODE = (sys.argv[1] if len(sys.argv) > 1 else "quick").lower()
 REQUIRED_HEADERS = ["content-security-policy", "strict-transport-security", "x-content-type-options",

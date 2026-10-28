@@ -49,6 +49,7 @@
   "ncua.gov",
   "opportunityiowa.gov",
   "otr.cfo.dc.gov",
+  "pagead2.googlesyndication.com",
   "portal.ct.gov",
   "revenue.delaware.gov",
   "revenue.ky.gov",
@@ -58,6 +59,7 @@
   "sdlegislature.gov",
   "sf.freddiemac.com",
   "singlefamily.fanniemae.com",
+  "static.cloudflareinsights.com",
   "tax.illinois.gov",
   "tax.nv.gov",
   "tax.ri.gov",
@@ -86,6 +88,7 @@
   "www.ihda.org",
   "www.in.gov",
   "www.investor.gov",
+  "www.irs.gov",
   "www.kslegislature.gov",
   "www.kyhousing.org",
   "www.lavote.gov",
@@ -142,7 +145,7 @@
   "www.wyomingcda.com",
   "www.zillow.com"
  ],
- "generated": "2026-10-22T19:03:42Z",
+ "generated": "2026-10-28T19:37:32Z",
  "key_pages": {
   "/": {
    "inline_scripts": 0,
@@ -176,7 +179,7 @@
   },
   "/hi/states/texas/": {
    "inline_scripts": 0,
-   "skeleton": "texas प्रॉपर्टी टैक्स, ट्रांसफ़र टैक्स और क्लोज़िंग लागत|texas में घर खरीदना|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets/,/blog/,/hi/states/",
+   "skeleton": "texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets/,/blog/,/hi/states/",
    "skeleton_hash": "ce33acda587bcdbb"
   },
   "/homes/": {
@@ -191,7 +194,7 @@
   },
   "/ja/": {
    "inline_scripts": 0,
-   "skeleton": "初めてのマイホームのために貯蓄しよう | downpayment desk|わが家の玄関までの道のり。|/ja/tracker/,/ja/calculators/,/ja/rates/,/ja/homes/,/ja/markets/,/blog/,/ja/states/",
+   "skeleton": "\u521d\u3081\u3066\u306e\u30de\u30a4\u30db\u30fc\u30e0\u306e\u305f\u3081\u306b\u8caf\u84c4\u3057\u3088\u3046 | downpayment desk|\u308f\u304c\u5bb6\u306e\u7384\u95a2\u307e\u3067\u306e\u9053\u306e\u308a\u3002|/ja/tracker/,/ja/calculators/,/ja/rates/,/ja/homes/,/ja/markets/,/blog/,/ja/states/",
    "skeleton_hash": "1d570f5cf62ce277"
   },
   "/markets/": {
@@ -206,13 +209,13 @@
   },
   "/sponsor-terms/": {
    "inline_scripts": 0,
-   "skeleton": "sponsor terms | downpayment desk|sponsor terms|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "801f1b07d56f985b"
+   "skeleton": "affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "98ac5544150fc6e0"
   },
   "/sponsor/": {
    "inline_scripts": 0,
-   "skeleton": "sponsor downpayment desk | downpayment desk|put your brand in front of first-time home buyers.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
-   "skeleton_hash": "04055317e50ee023"
+   "skeleton": "save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/",
+   "skeleton_hash": "2774fb92fcf665bb"
   },
   "/states/": {
    "inline_scripts": 0,
@@ -231,11 +234,11 @@
   },
   "/zh/tracker/": {
    "inline_scripts": 0,
-   "skeleton": "首付储蓄追踪 | downpayment desk|储蓄追踪|/zh/tracker/,/zh/calculators/,/zh/rates/,/zh/homes/,/zh/markets/,/blog/,/zh/states/",
+   "skeleton": "\u9996\u4ed8\u50a8\u84c4\u8ffd\u8e2a | downpayment desk|\u50a8\u84c4\u8ffd\u8e2a|/zh/tracker/,/zh/calculators/,/zh/rates/,/zh/homes/,/zh/markets/,/blog/,/zh/states/",
    "skeleton_hash": "e33a759031ed47de"
   }
  },
- "min_sitemap_pages": 197,
+ "min_sitemap_pages": 202,
  "preapproved_domains": [
   "cloudflareinsights.com",
   "eligibility.sc.egov.usda.gov",
