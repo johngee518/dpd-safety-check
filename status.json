@@ -1,16 +1,16 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-28T18:48:07Z",
- "status": "FAIL",
- "fail_count": 19,
+ "checked_at": "2026-10-28T19:38:58Z",
+ "status": "WARN",
+ "fail_count": 0,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40748418731",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/40756126922",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (83 days)"
+   "detail": "valid, expires 2027-01-19 (82 days)"
   },
   {
    "check": "http->https",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 17334 bytes"
+   "detail": "HTTP 200, 23666 bytes"
   },
   {
    "check": "headers /",
@@ -30,97 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "246 pages listed"
-  },
-  {
-   "check": "page /",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /blog/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /calculators/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /down-payment-calculator/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /es/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /first-time-buyer-programs/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /hi/states/texas/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /homes/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /how-long-to-save/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /ja/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /markets/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /rates/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2"
-  },
-  {
-   "check": "page /sponsor-terms/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1; title/h1/nav changed: 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/homes/,/market' (expected 'sponsor terms | downpayment desk|sponsor terms|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
-  },
-  {
-   "check": "page /sponsor/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1; title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/' (expected 'sponsor downpayment desk | downpayment desk|put your brand in front of first-time home buyers.|/tracker/,/calculators/,/rates/,/homes/,/mark')"
-  },
-  {
-   "check": "page /states/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /states/texas/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /tracker/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
-  },
-  {
-   "check": "page /zh/tracker/",
-   "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "247 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -134,8 +44,8 @@
   },
   {
    "check": "pages",
-   "status": "FAIL",
-   "detail": "252 pages checked: 234 clean, 18 with problems"
+   "status": "PASS",
+   "detail": "253 pages checked: 253 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
