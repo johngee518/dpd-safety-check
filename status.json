@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "quick",
- "checked_at": "2026-10-30T10:16:07Z",
+ "mode": "full",
+ "checked_at": "2026-10-30T15:51:15Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41039468425",
+ "warn_count": 15,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41084371606",
  "results": [
   {
    "check": "tls",
@@ -56,6 +56,81 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://hcr.ny.gov HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://housing.az.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=11911 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "outbound links",
+   "status": "PASS",
+   "detail": "165 unique: 151 ok, 14 warn, 0 fail"
   }
  ]
 }
