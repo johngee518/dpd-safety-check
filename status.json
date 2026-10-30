@@ -1,16 +1,16 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-30T16:44:57Z",
- "status": "WARN",
- "fail_count": 0,
+ "checked_at": "2026-10-30T20:41:18Z",
+ "status": "FAIL",
+ "fail_count": 3,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41092643773",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41125118474",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (81 days)"
+   "detail": "valid, expires 2027-01-19 (80 days)"
   },
   {
    "check": "http->https",
@@ -20,32 +20,32 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 24531 bytes"
+   "detail": "HTTP 200, 24839 bytes"
   },
   {
    "check": "headers /",
-   "status": "PASS",
-   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+   "status": "FAIL",
+   "detail": "CSP allows unsafe-eval"
   },
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "248 pages listed"
+   "detail": "250 pages listed"
   },
   {
    "check": "headers /rates/",
-   "status": "PASS",
-   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+   "status": "FAIL",
+   "detail": "CSP allows unsafe-eval"
   },
   {
    "check": "headers /sponsor/",
-   "status": "PASS",
-   "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
+   "status": "FAIL",
+   "detail": "CSP allows unsafe-eval"
   },
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "254 pages checked: 254 clean, 0 with problems"
+   "detail": "256 pages checked: 256 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
