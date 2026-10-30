@@ -12,6 +12,7 @@ and checks: titles, meta descriptions, canonical, exactly one H1, heading order,
 noindex, JSON-LD validity/types, image alt text, Open Graph/Twitter tags, viewport,
 lang, favicon, hreflang (and reciprocity on a rotating sample of /<lang>/ pages, not all of them),
 real 404 status, broken internal links, http->https redirect.
+External Amazon Associates URLs are never fetched (Associates policy / John via Charles 2026-10-30).
 AEO: FAQPage JSON-LD equals the visible FAQ text, Article JSON-LD on posts, /llms.txt, AI crawlers allowed like
 every other bot, visible 'Updated' dates within their windows, and official-source citations on key pages.
 

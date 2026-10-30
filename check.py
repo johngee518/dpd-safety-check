@@ -5,7 +5,7 @@ quick (hourly): site up, TLS valid >14 days, HTTP->HTTPS, security headers (CSP,
   X-Content-Type-Options, Referrer-Policy, Permissions-Policy), every sitemap page 200 and free of injected external
   scripts / iframes / object tags / unknown external domains, key-page title/h1/nav skeleton vs baseline.json
   (numbers and month names ignored, so normal data refreshes never alarm), Google Safe Browsing.
-full (daily, 14:41 UTC): quick + every outbound link (broken; redirect to another domain or parked page = possible hijack;
+full (daily, 14:41 UTC): quick + every outbound link except Amazon Associates (broken; redirect to another domain or parked page = possible hijack;
   403/429/5xx bot-blocks = warnings).
 Exit 1 on any failure; Markdown summary -> $GITHUB_STEP_SUMMARY (first line SAFETY_ALERT on failure); JSON -> status.json.
 Nothing here is secret: the only optional secret (SAFE_BROWSING_KEY) is never printed or written."""
@@ -233,7 +233,23 @@ def link_check(u):
     return "FAIL", f"{u} HTTP {s} (broken)"
 
 
+
+# Amazon Associates (John via Charles, 2026-10-30): never fetch/test-click amazon.com / amzn.to affiliate links.
+SKIP_OUTBOUND_HOST_SUFFIXES = ("amazon.com", "amazon.co.uk", "amazon.ca", "amazon.de", "amazon.fr", "amazon.co.jp", "amzn.to", "amzn.com")
+
+
+def skip_outbound(u: str) -> bool:
+    h = (urllib.parse.urlparse(u).hostname or "").lower()
+    if not h:
+        return False
+    return any(h == s or h.endswith("." + s) for s in SKIP_OUTBOUND_HOST_SUFFIXES)
+
+
 def check_links(links):
+    skipped = sorted(u for u in links if skip_outbound(u))
+    links = {u for u in links if not skip_outbound(u)}
+    if skipped:
+        add("outbound links (amazon skipped)", "PASS", f"skipped {len(skipped)} Amazon Associates URL(s); never fetched")
     if not links: add("outbound links", "WARN", "no outbound links found"); return
     c = {"PASS": 0, "WARN": 0, "FAIL": 0}
     with cf.ThreadPoolExecutor(12) as ex:
