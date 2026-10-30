@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-10-30T20:41:18Z",
+ "checked_at": "2026-10-30T21:38:00Z",
  "status": "FAIL",
- "fail_count": 3,
+ "fail_count": 22,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41125118474",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/41132452703",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 24839 bytes"
+   "detail": "HTTP 200, 25833 bytes"
   },
   {
    "check": "headers /",
@@ -31,6 +31,96 @@
    "check": "sitemap",
    "status": "PASS",
    "detail": "250 pages listed"
+  },
+  {
+   "check": "page /",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /blog/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'the stash: saving, home buying, mortgage & investing guides|the stash|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'the stash: saving, home buying, mortgage & investing guides|the stash|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /calculators/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'mortgage, affordability & rent vs buy calculators|calculators|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'mortgage, affordability & rent vs buy calculators|calculators|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /down-payment-calculator/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'down payment calculator with pmi, taxes & insurance|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/blog/,/homes/' (expected 'down payment calculator with pmi, taxes & insurance|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/homes/,/marke')"
+  },
+  {
+   "check": "page /es/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'ahorra para tu primera vivienda | downpayment desk|tu camino hasta la puerta de tu casa.|/es/tracker/,/es/calculators/,/es/rates/,/blog/,/es' (expected 'ahorra para tu primera vivienda | downpayment desk|tu camino hasta la puerta de tu casa.|/es/tracker/,/es/calculators/,/es/rates/,/es/homes/')"
+  },
+  {
+   "check": "page /first-time-buyer-programs/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'first-time buyer & down payment assistance by state|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/' (expected 'first-time buyer & down payment assistance by state|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/')"
+  },
+  {
+   "check": "page /hi/states/texas/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/blog/,/hi/homes/,/hi/' (expected 'texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/hi/homes/,/hi/markets')"
+  },
+  {
+   "check": "page /homes/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'homes: local home values and mon stats | downpayment desk|homes|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'homes: local home values and mon stats | downpayment desk|homes|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /how-long-to-save/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'how long to save for a down payment? calculator by zip|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/bl' (expected 'how long to save for a down payment? calculator by zip|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/ho')"
+  },
+  {
+   "check": "page /ja/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: '\u521d\u3081\u3066\u306e\u30de\u30a4\u30db\u30fc\u30e0\u306e\u305f\u3081\u306b\u8caf\u84c4\u3057\u3088\u3046 | downpayment desk|\u308f\u304c\u5bb6\u306e\u7384\u95a2\u307e\u3067\u306e\u9053\u306e\u308a\u3002|/ja/tracker/,/ja/calculators/,/ja/rates/,/blog/,/ja/homes/,/ja/markets/,/ja/states/' (expected '\u521d\u3081\u3066\u306e\u30de\u30a4\u30db\u30fc\u30e0\u306e\u305f\u3081\u306b\u8caf\u84c4\u3057\u3088\u3046 | downpayment desk|\u308f\u304c\u5bb6\u306e\u7384\u95a2\u307e\u3067\u306e\u9053\u306e\u308a\u3002|/ja/tracker/,/ja/calculators/,/ja/rates/,/ja/homes/,/ja/markets/,/blog/,/ja/states/')"
+  },
+  {
+   "check": "page /markets/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'mon search: crypto, energy & commodities|mon|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'mon search: crypto, energy & commodities|mon|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /rates/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'today's mortgage rates & housing economy | downpayment desk|rates & economy|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states' (expected 'today's mortgage rates & housing economy | downpayment desk|rates & economy|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states')"
+  },
+  {
+   "check": "page /sponsor-terms/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/blog/,/homes/,' (expected 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/homes/,/market')"
+  },
+  {
+   "check": "page /sponsor/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /states/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'home buying costs by state: property & transfer taxes|home buying costs by state|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/s' (expected 'home buying costs by state: property & transfer taxes|home buying costs by state|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/s')"
+  },
+  {
+   "check": "page /states/texas/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'texas property tax, transfer tax & closing costs|buying a home in texas|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'texas property tax, transfer tax & closing costs|buying a home in texas|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /tracker/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: 'down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/homes/,/markets/,/blog/,/states/')"
+  },
+  {
+   "check": "page /zh/tracker/",
+   "status": "FAIL",
+   "detail": "title/h1/nav changed: '\u9996\u4ed8\u50a8\u84c4\u8ffd\u8e2a | downpayment desk|\u50a8\u84c4\u8ffd\u8e2a|/zh/tracker/,/zh/calculators/,/zh/rates/,/blog/,/zh/homes/,/zh/markets/,/zh/states/' (expected '\u9996\u4ed8\u50a8\u84c4\u8ffd\u8e2a | downpayment desk|\u50a8\u84c4\u8ffd\u8e2a|/zh/tracker/,/zh/calculators/,/zh/rates/,/zh/homes/,/zh/markets/,/blog/,/zh/states/')"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +134,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "256 pages checked: 256 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "256 pages checked: 238 clean, 18 with problems"
   },
   {
    "check": "safe browsing (API)",
