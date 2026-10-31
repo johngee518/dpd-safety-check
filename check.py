@@ -140,7 +140,7 @@ def check_headers(h, where):
     probs = []
     m = re.search(r"max-age=(\d+)", h.get("strict-transport-security", ""))
     if h.get("strict-transport-security") and (not m or int(m.group(1)) < 15552000): probs.append("HSTS max-age < 180 days")
-    if "unsafe-eval" in csp: probs.append("CSP allows unsafe-eval")
+    if re.search(r"(?<!wasm-)'unsafe-eval'", csp): probs.append("CSP allows unsafe-eval")  # 'wasm-unsafe-eval' (WebAssembly only, Pagefind search) is fine
     if csp and "api.gold-api.com" not in csp: probs.append("CSP changed: no longer allows gold-api (metals would break)")
     if missing or probs: add(f"headers {where}", "FAIL", "; ".join((["missing: " + ", ".join(missing)] if missing else []) + probs))
     else: add(f"headers {where}", "PASS", "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present")
