@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-06T01:40:23Z",
+ "checked_at": "2026-11-06T02:47:53Z",
  "status": "FAIL",
- "fail_count": 20,
+ "fail_count": 73,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/42145358080",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/42152561768",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 27104 bytes"
+   "detail": "HTTP 200, 36198 bytes"
   },
   {
    "check": "headers /",
@@ -30,17 +30,27 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "257 pages listed"
+   "detail": "260 pages listed"
   },
   {
    "check": "page /",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->2"
   },
   {
    "check": "page /blog/",
    "status": "FAIL",
-   "detail": "inline scripts 1->2"
+   "detail": "inline scripts 1->3"
+  },
+  {
+   "check": "page /blog/assistance-types/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org', 'www.bankrate.com']"
+  },
+  {
+   "check": "page /blog/loan-estimate-closing-disclosure/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['www.ecfr.gov']"
   },
   {
    "check": "page /calculators/",
@@ -55,12 +65,267 @@
   {
    "check": "page /es/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->2"
   },
   {
    "check": "page /first-time-buyer-programs/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "unknown external domains ['readyown.org', 'www.bankrate.com']; inline scripts 0->1"
+  },
+  {
+   "check": "page /first-time-buyer-programs/alabama/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/alaska/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/arizona/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/arkansas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/california/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/colorado/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/connecticut/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/delaware/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/district-of-columbia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/florida/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/georgia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/hawaii/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/idaho/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/illinois/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/indiana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/iowa/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/kansas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/kentucky/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/louisiana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/maine/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/maryland/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/massachusetts/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/michigan/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/minnesota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/mississippi/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/missouri/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/montana/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/nebraska/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/nevada/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/new-hampshire/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/new-jersey/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/new-mexico/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/new-york/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/north-carolina/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/north-dakota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/ohio/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/oklahoma/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/oregon/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/pennsylvania/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/rhode-island/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/south-carolina/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/south-dakota/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/tennessee/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/texas/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/utah/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/vermont/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/virginia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/washington/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/west-virginia/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/wisconsin/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
+  },
+  {
+   "check": "page /first-time-buyer-programs/wyoming/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['readyown.org']"
   },
   {
    "check": "page /hi/states/texas/",
@@ -80,7 +345,7 @@
   {
    "check": "page /ja/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->2"
   },
   {
    "check": "page /markets/",
@@ -105,7 +370,7 @@
   {
    "check": "page /sponsor/",
    "status": "FAIL",
-   "detail": "inline scripts 0->1"
+   "detail": "inline scripts 0->2"
   },
   {
    "check": "page /states/",
@@ -140,7 +405,7 @@
   {
    "check": "pages",
    "status": "FAIL",
-   "detail": "263 pages checked: 244 clean, 19 with problems"
+   "detail": "266 pages checked: 194 clean, 72 with problems"
   },
   {
    "check": "safe browsing (API)",
