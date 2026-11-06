@@ -10,6 +10,7 @@
  ],
  "external_domains": [
   "adfa.arkansas.gov",
+  "adssettings.google.com",
   "api.bigdatacloud.net",
   "api.coingecko.com",
   "api.gold-api.com",
@@ -30,6 +31,7 @@
   "dor.georgia.gov",
   "dor.sc.gov",
   "dor.wa.gov",
+  "files.consumerfinance.gov",
   "floridarevenue.com",
   "fred.stlouisfed.org",
   "gc.nh.gov",
@@ -50,7 +52,9 @@
   "opportunityiowa.gov",
   "otr.cfo.dc.gov",
   "pagead2.googlesyndication.com",
+  "policies.google.com",
   "portal.ct.gov",
+  "readyown.org",
   "revenue.delaware.gov",
   "revenue.ky.gov",
   "revenue.nebraska.gov",
@@ -65,11 +69,13 @@
   "tax.ri.gov",
   "tax.vermont.gov",
   "thda.org",
+  "www.aboutads.info",
   "www.ahfa.com",
   "www.ahfc.us",
   "www.amazon.com",
   "www.annualcreditreport.com",
   "www.azleg.gov",
+  "www.bankrate.com",
   "www.calhfa.ca.gov",
   "www.census.gov",
   "www.chfa.org",
@@ -79,13 +85,16 @@
   "www.delcode.delaware.gov",
   "www.destatehousing.com",
   "www.dfa.arkansas.gov",
+  "www.ecfr.gov",
   "www.eia.gov",
   "www.fdic.gov",
   "www.federalreserve.gov",
+  "www.floodsmart.gov",
   "www.floridahousing.org",
   "www.freddiemac.com",
   "www.housingnm.org",
   "www.hud.gov",
+  "www.ic3.gov",
   "www.idahohousing.com",
   "www.ihda.org",
   "www.in.gov",
@@ -145,102 +154,103 @@
   "www.wshfc.org",
   "www.wvhdf.com",
   "www.wyomingcda.com",
+  "www.youronlinechoices.eu",
   "www.zillow.com"
  ],
- "generated": "2026-10-31T19:34:51Z",
+ "generated": "2026-11-06T20:36:38Z",
  "key_pages": {
   "/": {
-   "inline_scripts": 0,
+   "inline_scripts": 2,
    "skeleton": "save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "296ae82093be63c1"
   },
   "/blog/": {
-   "inline_scripts": 1,
+   "inline_scripts": 3,
    "skeleton": "the stash: saving, home buying, mortgage & investing guides|the stash|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "97abad0413196ca8"
   },
   "/calculators/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "mortgage, affordability & rent vs buy calculators|calculators|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "de45b812b7746838"
   },
   "/down-payment-calculator/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "down payment calculator with pmi, taxes & insurance|down payment & monthly payment calculator|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "0423e3dd31ea03da"
   },
   "/es/": {
-   "inline_scripts": 0,
+   "inline_scripts": 2,
    "skeleton": "ahorra para tu primera vivienda | downpayment desk|tu camino hasta la puerta de tu casa.|/es/tracker/,/es/calculators/,/es/rates/,/blog/,/es/homes/,/es/markets/,/es/states/",
    "skeleton_hash": "b81cf6a6cf1e0cb9"
   },
   "/first-time-buyer-programs/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "first-time buyer & down payment assistance by state|first-time homebuyer & down payment assistance programs by state|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "f53851b734cf583e"
   },
   "/hi/states/texas/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "texas \u092a\u094d\u0930\u0949\u092a\u0930\u094d\u091f\u0940 \u091f\u0948\u0915\u094d\u0938, \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u091f\u0948\u0915\u094d\u0938 \u0914\u0930 \u0915\u094d\u0932\u094b\u091c\u093c\u093f\u0902\u0917 \u0932\u093e\u0917\u0924|texas \u092e\u0947\u0902 \u0918\u0930 \u0916\u0930\u0940\u0926\u0928\u093e|/hi/tracker/,/hi/calculators/,/hi/rates/,/blog/,/hi/homes/,/hi/markets/,/hi/states/",
    "skeleton_hash": "edbeae9427a9a49e"
   },
   "/homes/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "homes: local home values and mon stats | downpayment desk|homes|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "4874e3e6e8518e72"
   },
   "/how-long-to-save/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "how long to save for a down payment? calculator by zip|how long will it take to save for a down payment?|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "dc2a3ee3560bcf8a"
   },
   "/ja/": {
-   "inline_scripts": 0,
+   "inline_scripts": 2,
    "skeleton": "\u521d\u3081\u3066\u306e\u30de\u30a4\u30db\u30fc\u30e0\u306e\u305f\u3081\u306b\u8caf\u84c4\u3057\u3088\u3046 | downpayment desk|\u308f\u304c\u5bb6\u306e\u7384\u95a2\u307e\u3067\u306e\u9053\u306e\u308a\u3002|/ja/tracker/,/ja/calculators/,/ja/rates/,/blog/,/ja/homes/,/ja/markets/,/ja/states/",
    "skeleton_hash": "d252420f814da5cb"
   },
   "/markets/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "mon search: crypto, energy & commodities|mon|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "dd7207b5df91e4cc"
   },
   "/rates/": {
-   "inline_scripts": 1,
+   "inline_scripts": 2,
    "skeleton": "today's mortgage rates & housing economy | downpayment desk|rates & economy|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "588fb7dc95b106db"
   },
   "/sponsor-terms/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "756f83ddb28a4d5b"
   },
   "/sponsor/": {
-   "inline_scripts": 0,
+   "inline_scripts": 2,
    "skeleton": "save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "296ae82093be63c1"
   },
   "/states/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "home buying costs by state: property & transfer taxes|home buying costs by state|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "6896a17170586e77"
   },
   "/states/texas/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "texas property tax, transfer tax & closing costs|buying a home in texas|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "7a45b4c364d9d281"
   },
   "/tracker/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "down payment savings tracker | downpayment desk|savings tracker|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
    "skeleton_hash": "b0fdf6504b191a99"
   },
   "/zh/tracker/": {
-   "inline_scripts": 0,
+   "inline_scripts": 1,
    "skeleton": "\u9996\u4ed8\u50a8\u84c4\u8ffd\u8e2a | downpayment desk|\u50a8\u84c4\u8ffd\u8e2a|/zh/tracker/,/zh/calculators/,/zh/rates/,/blog/,/zh/homes/,/zh/markets/,/zh/states/",
    "skeleton_hash": "dc59e172f6265e3b"
   }
  },
- "min_sitemap_pages": 205,
+ "min_sitemap_pages": 212,
  "preapproved_domains": [
   "amazon.com",
   "amzn.to",
