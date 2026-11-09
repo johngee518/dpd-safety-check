@@ -46,12 +46,25 @@ def disp_len(s):
     Latin letters) and zero-width combining marks (e.g. many Devanagari vowel signs) count 0. Same as len() for English."""
     return sum(0 if unicodedata.category(c) == "Mn" else 2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in s)
 
+# /go/<partner> redirects to CJ affiliate click URLs and /api/ endpoints count clicks: this checker must never request them
+# (2026-11-09: it was the source of exactly one "human" click per partner per day, and it followed /go/ off-site to dpbolvw.net).
+TRACKING_PREFIXES = ("/go/", "/api/")
+AFFILIATE_HOST_SUFFIXES = ("amazon.com", "amzn.to", "amzn.com", "jdoqocy.com", "dpbolvw.net", "tkqlhce.com", "anrdoezrs.net", "ftjcfx.com", "qksrv.net")
+def is_tracking_path(path):
+    return path.startswith(TRACKING_PREFIXES)
+def is_affiliate_host(host):
+    host = (host or "").lower()
+    return any(host == h or host.endswith("." + h) for h in AFFILIATE_HOST_SUFFIXES)
+
 def fetch(url, timeout=15, follow=True, method="GET"):
     """Return dict(status, url, headers, body, error, redirects)."""
     redirects = []
     cur = url
     opener = urllib.request.build_opener(NoRedirect)  # default HTTPS context (same TLS/ALPN as safety_check.py; a custom context got Cloudflare-challenged)
     for _ in range(10):
+        _u = urllib.parse.urlparse(cur)
+        if is_tracking_path(_u.path) or is_affiliate_host(_u.hostname):
+            return {"status": None, "url": cur, "headers": {}, "body": "", "error": "skipped: tracking/affiliate URL is never requested", "redirects": redirects, "skipped": True}
         wait = PAUSE - (time.time() - _last[0])
         if wait > 0: time.sleep(wait)
         _last[0] = time.time()
@@ -315,7 +328,7 @@ def check_page(url, base_host, rep, timeout, all_titles, all_descs, link_targets
         if href.startswith(("mailto:", "tel:", "javascript:", "#", "data:")) or "/cdn-cgi/" in href:
             continue
         absu = urllib.parse.urljoin(url, href).split("#")[0]
-        if urllib.parse.urlparse(absu).netloc == base_host:
+        if urllib.parse.urlparse(absu).netloc == base_host and not is_tracking_path(urllib.parse.urlparse(absu).path):
             link_targets.add(absu)
     return info
 
