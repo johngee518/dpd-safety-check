@@ -208,7 +208,7 @@ def check_pages():
     return set().union(*(r["links"] for r in res)) if res else set()
 
 
-BOT_CHALLENGE = {"perfdrive.com"}  # bot-protection challenge hosts (Radware validate.perfdrive.com): a bot-block like 403, not a hijack
+BOT_CHALLENGE = {"perfdrive.com", "federalregister.gov"}  # bot-protection challenge hosts: Radware validate.perfdrive.com; eCFR (www.ecfr.gov) sends some runner IPs to unblock.federalregister.gov. A bot-block like 403, not a hijack
 
 
 def regdom(h):
