@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "full",
- "checked_at": "2026-11-09T23:55:24Z",
+ "checked_at": "2026-11-10T00:22:49Z",
  "status": "WARN",
  "fail_count": 0,
- "warn_count": 18,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/42724170168",
+ "warn_count": 17,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/42727717114",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 36574 bytes"
+   "detail": "HTTP 200, 36685 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "264 pages listed"
+   "detail": "271 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "270 pages checked: 270 clean, 0 with problems"
+   "detail": "277 pages checked: 277 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -110,16 +110,6 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/section-1026.19 sent this runner to a bot challenge (unblock.federalregister.gov); bot-block, not a hijack"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/section-1026.2 sent this runner to a bot challenge (unblock.federalregister.gov); bot-block, not a hijack"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
    "detail": "https://www.mass.gov/info-details/massachusetts-tax-rates HTTP 403 (bot-block or server error)"
   },
   {
@@ -140,7 +130,12 @@
   {
    "check": "link",
    "status": "WARN",
-   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html HTTP 403 (bot-block or server error)"
+   "detail": "https://www.revenue.nh.gov/taxes-glance/real-estate-transfer-tax HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.tn.gov/revenue/taxes/local-taxes/recordation-taxes/due-date-tax-rate.html unreachable (URLError: <urlopen error [Errno 104] Connection reset by peer>)"
   },
   {
    "check": "link",
@@ -150,7 +145,7 @@
   {
    "check": "outbound links",
    "status": "PASS",
-   "detail": "203 unique: 186 ok, 17 warn, 0 fail"
+   "detail": "204 unique: 188 ok, 16 warn, 0 fail"
   }
  ]
 }
