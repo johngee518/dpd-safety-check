@@ -20,6 +20,7 @@
   "code.wvlegislature.gov",
   "codes.ohio.gov",
   "commerce.mt.gov",
+  "content.govdelivery.com",
   "dat.maryland.gov",
   "data.census.gov",
   "data.openei.org",
@@ -61,6 +62,7 @@
   "revisor.mo.gov",
   "schousing.sc.gov",
   "sdlegislature.gov",
+  "selling-guide.fanniemae.com",
   "sf.freddiemac.com",
   "singlefamily.fanniemae.com",
   "static.cloudflareinsights.com",
@@ -89,6 +91,7 @@
   "www.eia.gov",
   "www.fdic.gov",
   "www.federalreserve.gov",
+  "www.fhfa.gov",
   "www.floodsmart.gov",
   "www.floridahousing.org",
   "www.freddiemac.com",
@@ -103,6 +106,7 @@
   "www.kslegislature.gov",
   "www.kyhousing.org",
   "www.lavote.gov",
+  "www.law.cornell.edu",
   "www.legis.iowa.gov",
   "www.lhc.la.gov",
   "www.maine.gov",
@@ -157,7 +161,7 @@
   "www.youronlinechoices.eu",
   "www.zillow.com"
  ],
- "generated": "2026-11-06T20:36:38Z",
+ "generated": "2026-11-12T20:38:16Z",
  "key_pages": {
   "/": {
    "inline_scripts": 2,
@@ -250,7 +254,7 @@
    "skeleton_hash": "dc59e172f6265e3b"
   }
  },
- "min_sitemap_pages": 212,
+ "min_sitemap_pages": 141,
  "preapproved_domains": [
   "amazon.com",
   "amzn.to",
