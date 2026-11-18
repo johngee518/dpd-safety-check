@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "quick",
- "checked_at": "2026-11-18T12:23:37Z",
+ "mode": "full",
+ "checked_at": "2026-11-18T14:22:44Z",
  "status": "FAIL",
  "fail_count": 1,
- "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44303458985",
+ "warn_count": 12,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44323422402",
  "results": [
   {
    "check": "tls",
@@ -56,6 +56,71 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
+  },
+  {
+   "check": "outbound links (affiliate skipped)",
+   "status": "PASS",
+   "detail": "skipped 31 Amazon/CJ affiliate URL(s); never fetched"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/DGS10 unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.aboutads.info/choices HTTP 429 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.rd.usda.gov/sites/default/files/Guarantee_SFH_Flyer.pdf HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "link",
+   "status": "WARN",
+   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
+  },
+  {
+   "check": "outbound links",
+   "status": "PASS",
+   "detail": "115 unique: 104 ok, 11 warn, 0 fail"
   }
  ]
 }
