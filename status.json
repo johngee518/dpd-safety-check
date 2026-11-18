@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-18T20:46:46Z",
+ "checked_at": "2026-11-18T22:11:07Z",
  "status": "WARN",
  "fail_count": 0,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44394545410",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44409012660",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 36674 bytes"
+   "detail": "HTTP 200, 36690 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "75 pages listed"
+   "detail": "76 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "82 pages checked: 82 clean, 0 with problems"
+   "detail": "83 pages checked: 83 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -97,6 +97,7 @@
   "/blog/property-taxes/",
   "/blog/rate-lock/",
   "/blog/rent-vs-buy/",
+  "/blog/saving-as-a-couple/",
   "/blog/savings-goal-math/",
   "/blog/selling-investments-down-payment/",
   "/blog/student-loans-and-buying/",
