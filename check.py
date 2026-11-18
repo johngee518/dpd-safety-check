@@ -162,13 +162,88 @@ def site_paths(body):
     return sorted({p for p in (urllib.parse.urlparse(u).path or "/" for u in re.findall(r"<loc>([^<]+)</loc>", body)) if not LANG_RE.match(p)})
 
 
+ROBOTS_META = re.compile(
+    r"""<meta\b(?=[^>]*\bname=["']robots["'])(?=[^>]*\bcontent=["']([^"']*)["'])[^>]*>""",
+    re.I,
+)
+RECORDED_SITEMAP_PATHS = None
+STATUS_BRANCH_JSON = "https://raw.githubusercontent.com/{repo}/status/status.json"
+
+
+def is_noindex(headers, body=""):
+    if re.search(r"\bnoindex\b|\bnone\b", (headers or {}).get("x-robots-tag", ""), re.I):
+        return True
+    return any(re.search(r"\bnoindex\b|\bnone\b", m.group(1), re.I) for m in ROBOTS_META.finditer(body or ""))
+
+
+def load_previous_sitemap_paths():
+    override = os.environ.get("DPD_PREV_SITEMAP_PATHS")
+    if override:
+        data = json.load(open(override)) if override.endswith(".json") and os.path.isfile(override) else json.loads(override)
+        if isinstance(data, dict):
+            data = data.get("sitemap_paths")
+        if isinstance(data, list) and all(isinstance(p, str) for p in data):
+            return data
+        return None
+    repo = os.environ.get("GITHUB_REPOSITORY") or "johngee518/dpd-safety-check"
+    s, _, _, body, _ = get(STATUS_BRANCH_JSON.format(repo=repo), timeout=15, tries=1)
+    if s != 200:
+        return None
+    try:
+        data = json.loads(body)
+    except json.JSONDecodeError:
+        return None
+    paths = data.get("sitemap_paths")
+    if isinstance(paths, list) and all(isinstance(p, str) for p in paths):
+        return paths
+    return None
+
+
+def evaluate_sitemap(current_paths, previous_paths, dropped_info):
+    current_paths = list(current_paths or [])
+    if not current_paths:
+        return False, "sitemap has no English URLs"
+    prev = list(previous_paths or [])
+    dropped = sorted(set(prev) - set(current_paths))
+    if not dropped:
+        return True, f"{len(current_paths)} pages listed"
+    unexplained = []
+    for path in dropped:
+        info = dropped_info.get(path) or {}
+        status = info.get("status")
+        if status != 200:
+            unexplained.append(f"{path} (HTTP {status or info.get('error') or 'unverified'})")
+        elif not info.get("noindex"):
+            unexplained.append(f"{path} (200 without noindex)")
+    if unexplained:
+        sample = ", ".join(unexplained[:5])
+        more = f" (+{len(unexplained) - 5} more)" if len(unexplained) > 5 else ""
+        return False, f"{len(current_paths)} pages listed; {len(dropped)} dropped, {len(unexplained)} unexplained: {sample}{more}"
+    return True, f"{len(current_paths)} pages listed; {len(dropped)} dropped and noindexed"
+
+
 def sitemap_paths():
+    global RECORDED_SITEMAP_PATHS
     s, _, _, body, err = get(BASE + "/sitemap.xml")
     if s != 200:
         add("sitemap", "FAIL", f"sitemap.xml returned {s or err}"); return []
     paths = site_paths(body)
-    add("sitemap", "PASS" if len(paths) >= BASELINE.get("min_sitemap_pages", 1) else "FAIL", f"{len(paths)} pages listed")
+    RECORDED_SITEMAP_PATHS = paths
+    prev = load_previous_sitemap_paths()
+    dropped = sorted(set(prev or []) - set(paths))
+    info = {}
+    if dropped:
+        with cf.ThreadPoolExecutor(8) as ex:
+            for path, result in zip(dropped, ex.map(_dropped_page_info, dropped)):
+                info[path] = result
+    ok, detail = evaluate_sitemap(paths, prev, info)
+    add("sitemap", "PASS" if ok else "FAIL", detail)
     return paths
+
+
+def _dropped_page_info(path):
+    s, _, h, body, err = get(BASE + path)
+    return {"status": s, "noindex": bool(s == 200 and is_noindex(h, body)), "error": err}
 
 
 def page_check(path):
@@ -309,7 +384,7 @@ def make_baseline():
         if path in KEY_PAGES: kp[path] = {"skeleton_hash": hsh, "skeleton": sk[:300], "inline_scripts": p.inline_scripts}
     old = BASELINE
     out = {"_note": "Expected public structure of the live site. Regenerate only after an approved deploy: python3 check.py baseline",
-           "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "min_sitemap_pages": max(1, int(len(paths) * 0.8)),
+           "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "allowed_script_hosts": old.get("allowed_script_hosts", ["f.convertkit.com"]),
            "allowed_script_suffixes": old.get("allowed_script_suffixes", [".kit.com"]),
            "redirect_allow": old.get("redirect_allow", {}), "preapproved_domains": old.get("preapproved_domains", []), "external_domains": sorted(doms), "key_pages": kp}
@@ -318,8 +393,16 @@ def make_baseline():
     return 0
 
 
+def self_check():
+    import unittest
+    suite = unittest.defaultTestLoader.discover(HERE, pattern="test_*.py")
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    return 0 if result.wasSuccessful() else 1
+
+
 def main():
     if MODE == "baseline": return make_baseline()
+    if MODE in ("test", "self-check", "selfcheck"): return self_check()
     check_tls(); check_http_redirect()
     links = check_pages()
     check_safe_browsing()
@@ -330,6 +413,9 @@ def main():
            "status": status, "fail_count": len(fails), "warn_count": len(warns),
            "run_url": f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}" if os.environ.get("GITHUB_RUN_ID") else None,
            "results": results}
+    recorded = RECORDED_SITEMAP_PATHS if RECORDED_SITEMAP_PATHS is not None else load_previous_sitemap_paths()
+    if recorded is not None:
+        doc["sitemap_paths"] = recorded
     json.dump(doc, open(os.path.join(HERE, "status.json"), "w"), indent=1)
     lines = ([f"# SAFETY_ALERT: DownPayment Desk {MODE} safety check FAILED", "", f"{len(fails)} failure(s) at {doc['checked_at']}:"]
              + [f"- **{r['check']}**: {r['detail']}" for r in fails] + [""]) if fails else [f"# DownPayment Desk safety check ({MODE}): {status}", ""]

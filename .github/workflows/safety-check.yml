@@ -46,6 +46,9 @@ jobs:
       - uses: actions/checkout@v4
         if: steps.gate.outputs.run == '1'
         with: { persist-credentials: false }
+      - name: Self-check sitemap rule
+        if: steps.gate.outputs.run == '1'
+        run: python3 check.py self-check
       - name: Run safety check
         id: check
         if: steps.gate.outputs.run == '1'

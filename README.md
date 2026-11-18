@@ -11,7 +11,8 @@ Manual run: Actions → DownPayment Desk safety check → Run workflow.
 **Quick checks:** site up; TLS valid and more than 14 days from expiry; HTTP redirects to HTTPS; security headers
 (CSP, HSTS, X-Frame-Options / frame-ancestors, X-Content-Type-Options, Referrer-Policy, Permissions-Policy); every
 sitemap page returns 200 with no injected external scripts, iframes, object tags, meta refreshes or unknown external
-domains; key pages' title/heading/navigation skeleton matches `baseline.json` (numbers and dates are ignored, so normal
+domains; English sitemap shrinks pass only when every dropped URL still returns 200 with noindex, and an empty or unexplained sitemap fails;
+key pages' title/heading/navigation skeleton matches `baseline.json` (numbers and dates are ignored, so normal
 data refreshes don't trigger alerts); Google Safe Browsing (keyless Transparency Report lookup, plus the official API
 when the optional `SAFE_BROWSING_KEY` secret is set).
 
