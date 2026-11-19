@@ -1,16 +1,16 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "full",
- "checked_at": "2026-11-19T19:12:59Z",
- "status": "FAIL",
- "fail_count": 2,
- "warn_count": 12,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44595814218",
+ "mode": "quick",
+ "checked_at": "2026-11-19T20:35:08Z",
+ "status": "WARN",
+ "fail_count": 0,
+ "warn_count": 1,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44610128885",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (61 days)"
+   "detail": "valid, expires 2027-01-19 (60 days)"
   },
   {
    "check": "http->https",
@@ -33,11 +33,6 @@
    "detail": "76 pages listed"
   },
   {
-   "check": "page /sponsor-terms/",
-   "status": "FAIL",
-   "detail": "inline scripts 1->2; title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/blog/,/homes/,')"
-  },
-  {
    "check": "headers /rates/",
    "status": "PASS",
    "detail": "CSP, HSTS, frame protection, nosniff, Referrer-Policy, Permissions-Policy present"
@@ -49,8 +44,8 @@
   },
   {
    "check": "pages",
-   "status": "FAIL",
-   "detail": "83 pages checked: 82 clean, 1 with problems"
+   "status": "PASS",
+   "detail": "83 pages checked: 83 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -61,71 +56,6 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
-  },
-  {
-   "check": "outbound links (affiliate skipped)",
-   "status": "PASS",
-   "detail": "skipped 32 Amazon/CJ affiliate URL(s); never fetched"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/DGS10 unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.aboutads.info/choices HTTP 429 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/sites/default/files/Guarantee_SFH_Flyer.pdf HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "outbound links",
-   "status": "PASS",
-   "detail": "115 unique: 104 ok, 11 warn, 0 fail"
   }
  ],
  "sitemap_paths": [
