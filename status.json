@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-19T02:51:03Z",
- "status": "WARN",
- "fail_count": 0,
+ "checked_at": "2026-11-19T03:42:25Z",
+ "status": "FAIL",
+ "fail_count": 2,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44447250766",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44453273372",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 36690 bytes"
+   "detail": "HTTP 200, 36692 bytes"
   },
   {
    "check": "headers /",
@@ -31,6 +31,11 @@
    "check": "sitemap",
    "status": "PASS",
    "detail": "76 pages listed"
+  },
+  {
+   "check": "page /sponsor-terms/",
+   "status": "FAIL",
+   "detail": "inline scripts 1->2; title/h1/nav changed: 'save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/' (expected 'affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/blog/,/homes/,')"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +49,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "83 pages checked: 83 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "83 pages checked: 82 clean, 1 with problems"
   },
   {
    "check": "safe browsing (API)",
