@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-19T21:24:34Z",
+ "checked_at": "2026-11-19T22:19:40Z",
  "status": "WARN",
  "fail_count": 0,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44618430657",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44627514704",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 36692 bytes"
+   "detail": "HTTP 200, 36697 bytes"
   },
   {
    "check": "headers /",
@@ -30,7 +30,7 @@
   {
    "check": "sitemap",
    "status": "PASS",
-   "detail": "76 pages listed"
+   "detail": "77 pages listed"
   },
   {
    "check": "headers /rates/",
@@ -45,7 +45,7 @@
   {
    "check": "pages",
    "status": "PASS",
-   "detail": "83 pages checked: 83 clean, 0 with problems"
+   "detail": "84 pages checked: 84 clean, 0 with problems"
   },
   {
    "check": "safe browsing (API)",
@@ -78,6 +78,7 @@
   "/blog/escrow-homeowners-insurance/",
   "/blog/extra-payments/",
   "/blog/fed-and-mortgage-rates/",
+  "/blog/fha-vs-conventional/",
   "/blog/first-home-checklist/",
   "/blog/first-time-buyer-programs/",
   "/blog/habits/",
