@@ -74,7 +74,7 @@
   "www.youronlinechoices.eu",
   "www.zillow.com"
  ],
- "generated": "2026-11-18T20:39:31Z",
+ "generated": "2026-11-19T20:34:30Z",
  "key_pages": {
   "/": {
    "inline_scripts": 2,
@@ -137,9 +137,9 @@
    "skeleton_hash": "588fb7dc95b106db"
   },
   "/sponsor-terms/": {
-   "inline_scripts": 1,
-   "skeleton": "affiliate and advertising disclosure | downpayment desk|affiliate and advertising disclosure|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
-   "skeleton_hash": "756f83ddb28a4d5b"
+   "inline_scripts": 2,
+   "skeleton": "save for your first home | downpayment desk|your path to the front door.|/tracker/,/calculators/,/rates/,/blog/,/homes/,/markets/,/states/",
+   "skeleton_hash": "296ae82093be63c1"
   },
   "/sponsor/": {
    "inline_scripts": 2,
