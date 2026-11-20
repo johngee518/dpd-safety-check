@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-20T19:59:59Z",
- "status": "WARN",
- "fail_count": 0,
+ "checked_at": "2026-11-20T21:21:34Z",
+ "status": "FAIL",
+ "fail_count": 6,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44807272682",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/44819570237",
  "results": [
   {
    "check": "tls",
@@ -20,7 +20,7 @@
   {
    "check": "site up",
    "status": "PASS",
-   "detail": "HTTP 200, 36673 bytes"
+   "detail": "HTTP 200, 36661 bytes"
   },
   {
    "check": "headers /",
@@ -31,6 +31,31 @@
    "check": "sitemap",
    "status": "PASS",
    "detail": "78 pages listed"
+  },
+  {
+   "check": "page /rates/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['www.bls.gov']"
+  },
+  {
+   "check": "page /recap/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['gold-api.com', 'www.alphavantage.co', 'www.bls.gov', 'www.coingecko.com', 'www.worldbank.org']"
+  },
+  {
+   "check": "page /recap/2026-09/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['gold-api.com', 'www.alphavantage.co', 'www.bls.gov', 'www.coingecko.com', 'www.worldbank.org']"
+  },
+  {
+   "check": "page /recap/2026-10/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['gold-api.com', 'www.alphavantage.co', 'www.bls.gov', 'www.coingecko.com', 'www.worldbank.org']"
+  },
+  {
+   "check": "page /recap/2026-11/",
+   "status": "FAIL",
+   "detail": "unknown external domains ['gold-api.com', 'www.alphavantage.co', 'www.bls.gov', 'www.coingecko.com', 'www.worldbank.org']"
   },
   {
    "check": "headers /rates/",
@@ -44,8 +69,8 @@
   },
   {
    "check": "pages",
-   "status": "PASS",
-   "detail": "85 pages checked: 85 clean, 0 with problems"
+   "status": "FAIL",
+   "detail": "85 pages checked: 80 clean, 5 with problems"
   },
   {
    "check": "safe browsing (API)",
