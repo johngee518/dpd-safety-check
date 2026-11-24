@@ -1,21 +1,21 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-24T19:05:16Z",
+ "checked_at": "2026-11-24T21:35:05Z",
  "status": "FAIL",
  "fail_count": 6,
  "warn_count": 2,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/45466331656",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/45492532112",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (56 days)"
+   "detail": "valid, expires 2027-01-19 (55 days)"
   },
   {
    "check": "http->https",
-   "status": "WARN",
-   "detail": "port 80 unreachable from this runner (TimeoutError: timed out); HSTS still forces HTTPS"
+   "status": "PASS",
+   "detail": "301 to HTTPS"
   },
   {
    "check": "site up",
@@ -79,8 +79,8 @@
   },
   {
    "check": "safe browsing (transparency report)",
-   "status": "PASS",
-   "detail": "no unsafe content found"
+   "status": "WARN",
+   "detail": "lookup unavailable (status 429)"
   }
  ],
  "sitemap_paths": [
