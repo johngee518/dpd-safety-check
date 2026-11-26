@@ -1,16 +1,16 @@
 {
  "site": "https://downpaymentdesk.com",
  "mode": "quick",
- "checked_at": "2026-11-26T15:44:46Z",
+ "checked_at": "2026-11-26T20:19:20Z",
  "status": "FAIL",
  "fail_count": 6,
  "warn_count": 1,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/45852074669",
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/45890165234",
  "results": [
   {
    "check": "tls",
    "status": "PASS",
-   "detail": "valid, expires 2027-01-19 (54 days)"
+   "detail": "valid, expires 2027-01-19 (53 days)"
   },
   {
    "check": "http->https",
