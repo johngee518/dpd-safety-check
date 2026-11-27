@@ -1,11 +1,11 @@
 {
  "site": "https://downpaymentdesk.com",
- "mode": "full",
- "checked_at": "2026-11-27T18:09:36Z",
+ "mode": "quick",
+ "checked_at": "2026-11-27T19:12:43Z",
  "status": "FAIL",
  "fail_count": 6,
- "warn_count": 17,
- "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/46047213710",
+ "warn_count": 1,
+ "run_url": "https://github.com/johngee518/dpd-safety-check/actions/runs/46055061813",
  "results": [
   {
    "check": "tls",
@@ -81,96 +81,6 @@
    "check": "safe browsing (transparency report)",
    "status": "PASS",
    "detail": "no unsafe content found"
-  },
-  {
-   "check": "outbound links (affiliate skipped)",
-   "status": "PASS",
-   "detail": "skipped 40 Amazon/CJ affiliate URL(s); never fetched"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://data.census.gov/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/CPIAUCSL unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/DGS10 unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/FEDFUNDS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MORTGAGE15US unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MORTGAGE30US unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/MSPUS unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://fred.stlouisfed.org/series/UNRATE unreachable (TimeoutError: The read operation timed out)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://law.justia.com/codes/new-mexico/chapter-14/article-8/section-14-8-15/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.aboutads.info/choices HTTP 429 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.bls.gov/cpi/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.bls.gov/cps/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.natronacounty-wy.gov/FAQ.aspx?QID=181 HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/programs-services/single-family-housing-programs/single-family-housing-guaranteed-loan-program HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.rd.usda.gov/sites/default/files/Guarantee_SFH_Flyer.pdf HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "link",
-   "status": "WARN",
-   "detail": "https://www.zillow.com/research/data/ HTTP 403 (bot-block or server error)"
-  },
-  {
-   "check": "outbound links",
-   "status": "PASS",
-   "detail": "137 unique: 121 ok, 16 warn, 0 fail"
   }
  ],
  "sitemap_paths": [
